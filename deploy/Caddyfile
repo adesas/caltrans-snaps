@@ -4,6 +4,10 @@
 }
 
 :8090 {
+	# apex + www -> GitHub Pages site (traffic arrives via Cloudflare Tunnel)
+	@apex host sacvalleycams.com www.sacvalleycams.com
+	redir @apex https://adesas.github.io/caltrans-snaps/ permanent
+
 	root * /mnt/8tb/caltrans-snaps
 	file_server
 

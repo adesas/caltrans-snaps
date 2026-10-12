@@ -1,0 +1,14 @@
+# Cloudflare Tunnel ingress for caltrans-snaps (live state on the recording box).
+# tunnel id a19eb3aa-2962-48b8-8b5a-82cb68db44e1 ("caltrans-media")
+# DNS records created with: cloudflared tunnel route dns <id> <hostname>
+tunnel: a19eb3aa-2962-48b8-8b5a-82cb68db44e1
+credentials-file: /etc/cloudflared/a19eb3aa-2962-48b8-8b5a-82cb68db44e1.json
+
+ingress:
+  - hostname: sacvalleycams.com          # -> Caddy :8090 -> 301 to GitHub Pages
+    service: http://localhost:8090
+  - hostname: www.sacvalleycams.com      # -> same redirect
+    service: http://localhost:8090
+  - hostname: media.sacvalleycams.com    # -> HLS recordings tree
+    service: http://localhost:8090
+  - service: http_status:404
