@@ -1,4 +1,4 @@
-/* global HLS, CFG */
+/* global Hls, CFG */
 "use strict";
 
 const $ = (s) => document.querySelector(s);
@@ -15,7 +15,13 @@ function hourUrl(camId, dateStr, hh) {
   return `${CFG.MEDIA_BASE}/hls/${camId}/${dateStr}/${pad(hh)}/index.m3u8`;
 }
 function thumbUrl(camId, dateStr, hh) {
-  return `${CFG.MEDIA_BASE}/hls/${camId}/${dateStr}/${pad(hh)}/thumb.jpg`;
+  // thumbnails are written when an hour completes; if the current hour has
+  // none yet, fall back once to the previous hour's thumbnail
+  const d = new Date(`${dateStr}T00:00:00`);
+  d.setHours(hh - 1);
+  const prev = `${CFG.MEDIA_BASE}/hls/${camId}/${fmtDate(d)}/${pad(d.getHours())}/thumb.jpg`;
+  return `<img loading="lazy" alt="" src="${CFG.MEDIA_BASE}/hls/${camId}/${dateStr}/${pad(hh)}/thumb.jpg"
+    onerror="if(!this.dataset.p){this.dataset.p=1;this.src='${prev}'}else this.style.display='none'">`;
 }
 
 async function init() {
@@ -47,8 +53,7 @@ function renderSidebar() {
       const card = document.createElement("button");
       card.className = "cam";
       card.dataset.id = cam.id;
-      card.innerHTML = `<img loading="lazy" alt="" src="${thumbUrl(cam.id, fmtDate(new Date()), new Date().getHours())}"
-        onerror="this.style.display='none'">
+      card.innerHTML = `${thumbUrl(cam.id, fmtDate(new Date()), new Date().getHours())}
         <span>${cam.name}</span><small>${cam.county}${cam.direction ? " · " + cam.direction : ""}</small>`;
       card.onclick = () => selectCam(cam);
       side.appendChild(card);
@@ -67,8 +72,8 @@ function renderHourBar() {
     b.textContent = pad(hh);
     b.dataset.hh = hh;
     b.onclick = () => selectHour(hh);
-    // probe availability asynchronously
-    fetch(thumbUrl(currentCam.id, dateStr, hh), { method: "HEAD" })
+    // probe the playlist itself (segments exist even before thumb.jpg is written)
+    fetch(hourUrl(currentCam.id, dateStr, hh), { method: "HEAD" })
       .then((r) => { if (r.ok) b.classList.add("has"); else b.classList.add("empty"); })
       .catch(() => b.classList.add("empty"));
     bar.appendChild(b);
@@ -98,11 +103,12 @@ function playUrl(url) {
   const video = $("#video");
   $("#noSel").style.display = "none";
   if (hls) { hls.destroy(); hls = null; }
-  if (HLS.isSupported()) {
-    hls = new HLS({ lowLatencyMode: false });
+  const Lib = window.Hls || window.HLS;   // hls.js UMD global is `Hls`
+  if (Lib && Lib.isSupported()) {
+    hls = new Lib({ lowLatencyMode: false });
     hls.loadSource(url);
     hls.attachMedia(video);
-    hls.on(HLS.Events.ERROR, (_e, d) => {
+    hls.on(Lib.Events.ERROR, (_e, d) => {
       if (d.fatal && d.details === "manifestLoadError") {
         $("#camMeta").innerHTML += ` <em class="miss">no recording for this hour</em>`;
       }
