@@ -2,6 +2,8 @@
 "use strict";
 
 const $ = (s) => document.querySelector(s);
+// local preview: `make site-serve` + caddy on :8090 both work on localhost
+if (location.hostname === "localhost") CFG.MEDIA_BASE = "http://localhost:8090";
 let catalog = null;
 let currentCam = null;
 let hls = null;
