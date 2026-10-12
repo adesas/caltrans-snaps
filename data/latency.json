@@ -1,0 +1,11 @@
+{
+  "99-w-riego-rd-oc-sut99-nb": {
+    "id": "99-w-riego-rd-oc-sut99-nb",
+    "latency_s": 71.82,
+    "match_corr": 0.39,
+    "median_corr": 0.187,
+    "contrast_ok": true,
+    "samples": 1969,
+    "measured_at": "2026-10-12T15:23:55-07:00"
+  }
+}
