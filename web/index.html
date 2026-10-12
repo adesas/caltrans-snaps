@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sacramento Valley Traffic Cam Archive</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+</head>
+<body>
+<header>
+  <div>
+    <h1>📷 Sac Valley Traffic Cam Archive</h1>
+    <p class="sub">Free rolling <span id="retentionDays">3</span>-day archive of Caltrans cameras along SR-70 &amp; SR-99 (Oroville · Yuba City · Marysville). Footage courtesy of <a href="https://cwwp2.dot.ca.gov/vm/streamlist.htm" rel="noreferrer">Caltrans</a>.</p>
+  </div>
+  <a id="requestBtn" class="btn" target="_blank" rel="noreferrer"
+     href="https://github.com/OWNER/caltrans-snaps/issues/new?labels=coverage-request&title=Add+county:+%3CCounty%3E">
+     ✋ Request a county</a>
+</header>
+
+<main>
+  <aside id="sidebar"></aside>
+  <section id="playerPane">
+    <div id="playerBox">
+      <video id="video" playsinline controls muted></video>
+      <div id="noSel">← pick a camera</div>
+    </div>
+    <div id="controls">
+      <label>Day <input type="date" id="dayPick"></label>
+      <button class="btn" id="nowBtn">⏺ Now</button>
+      <div id="hourBar"></div>
+    </div>
+    <div id="camMeta"></div>
+  </section>
+</main>
+
+<footer>Recordings are stored locally and served as HLS. Not affiliated with Caltrans.</footer>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

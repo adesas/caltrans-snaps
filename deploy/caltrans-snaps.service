@@ -1,0 +1,18 @@
+[Unit]
+Description=caltrans-snaps traffic camera recorder
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=al
+WorkingDirectory=/home/al/caltrans_snaps
+ExecStart=/usr/bin/python3 -m snaps.main --config config/cameras.yaml
+Environment=PYTHONPATH=/home/al/caltrans_snaps/src
+Restart=always
+RestartSec=10
+# graceful shutdown: main.py traps SIGTERM and finalizes the current hour
+TimeoutStopSec=60
+
+[Install]
+WantedBy=multi-user.target

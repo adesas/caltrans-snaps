@@ -1,0 +1,17 @@
+{
+	auto_https off
+	admin off
+}
+
+:8090 {
+	root * /mnt/8tb/caltrans-snaps
+	file_server browse off
+
+	# GitHub Pages origin must be allowed to fetch HLS
+	header Access-Control-Allow-Origin *
+
+	@m3u8 path *.m3u8
+	header @m3u8 Content-Type application/vnd.apple.mpegurl
+	@ts path *.ts
+	header @ts Content-Type video/mp2t
+}

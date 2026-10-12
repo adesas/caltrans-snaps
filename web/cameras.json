@@ -1,0 +1,137 @@
+{
+ "region": "Oroville / SR-70 Corridor",
+ "updated_utc": "2026-10-12T16:27:55Z",
+ "timezone": "America/Los_Angeles",
+ "groups": [
+  {
+   "route": "SR-70",
+   "cameras": [
+    {
+     "id": "70-cox-ln-wo-but70-wb",
+     "objectid": 372,
+     "name": "Hwy 70 WO Cox Ln",
+     "route": "SR-70",
+     "county": "Butte",
+     "place": "Oroville",
+     "direction": null,
+     "lat": 39.37603607,
+     "lon": -121.61262643,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/70_Cox_Ln_WO_BUT70_WB.stream/playlist.m3u8"
+    },
+    {
+     "id": "70-ramirez-rd-yub70-wb",
+     "objectid": 438,
+     "name": "Hwy 70 at Ramirez",
+     "route": "SR-70",
+     "county": "Yuba",
+     "place": "Yuba City",
+     "direction": "West",
+     "lat": 39.264525,
+     "lon": -121.597602,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/70_Ramirez_Rd_YUB70_WB.stream/playlist.m3u8"
+    },
+    {
+     "id": "70-saddleback-dr-yub70-nb",
+     "objectid": 439,
+     "name": "Hwy 70 at Saddleback",
+     "route": "SR-70",
+     "county": "Yuba",
+     "place": "Marysville",
+     "direction": "West",
+     "lat": 39.189445,
+     "lon": -121.594635,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/70_Saddleback_Dr_YUB70_NB.stream/playlist.m3u8"
+    },
+    {
+     "id": "70-feather-river-blvd-jso-yub70-nb",
+     "objectid": 304,
+     "name": "Hwy 70 at Feather River",
+     "route": "SR-70",
+     "county": "Yuba",
+     "place": "Marysville",
+     "direction": null,
+     "lat": 39.12163,
+     "lon": -121.57217,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/70_Feather_River_Blvd_JSO_YUB70_NB.stream/playlist.m3u8"
+    }
+   ]
+  },
+  {
+   "route": "SR-99",
+   "cameras": [
+    {
+     "id": "99-skyway-but99-nb-1",
+     "objectid": 333,
+     "name": "Hwy 99 at Skyway 1",
+     "route": "SR-99",
+     "county": "Butte",
+     "place": "Chico",
+     "direction": null,
+     "lat": 39.715094,
+     "lon": -121.800321,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Skyway_BUT99_NB_1.stream/playlist.m3u8"
+    },
+    {
+     "id": "99-southgate-ln-but99-nb-1",
+     "objectid": 331,
+     "name": "Hwy 99 at Southgate 1",
+     "route": "SR-99",
+     "county": "Butte",
+     "place": "Chico",
+     "direction": null,
+     "lat": 39.701535,
+     "lon": -121.785848,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Southgate_Ln_BUT99_NB_1.stream/playlist.m3u8"
+    },
+    {
+     "id": "99-southgate-ln-but99-nb-2",
+     "objectid": 332,
+     "name": "Hwy 99 at Southgate 2",
+     "route": "SR-99",
+     "county": "Butte",
+     "place": "Chico",
+     "direction": null,
+     "lat": 39.701535,
+     "lon": -121.785848,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Southgate_Ln_BUT99_NB_2.stream/playlist.m3u8"
+    },
+    {
+     "id": "99-neal-rd-jso-but99-sb",
+     "objectid": 309,
+     "name": "Hwy 99 at Neal",
+     "route": "SR-99",
+     "county": "Butte",
+     "place": "Durham",
+     "direction": null,
+     "lat": 39.6622,
+     "lon": -121.74011,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Neal_Rd_JSO_BUT99_SB.stream/playlist.m3u8"
+    },
+    {
+     "id": "99-jct162e-but99-nb",
+     "objectid": 434,
+     "name": "Hwy 99 at Hwy 162",
+     "route": "SR-99",
+     "county": "Butte",
+     "place": "Oroville",
+     "direction": "North",
+     "lat": 39.494028,
+     "lon": -121.688389,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/99_JCT162E_BUT99_NB.stream/playlist.m3u8"
+    },
+    {
+     "id": "99-w-riego-rd-oc-sut99-nb",
+     "objectid": 305,
+     "name": "Hwy 99 at Riego NB",
+     "route": "SR-99",
+     "county": "Sutter",
+     "place": "Nicolaus",
+     "direction": null,
+     "lat": 38.74828,
+     "lon": -121.54006,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/99_W_Riego_Rd_OC_SUT99_NB.stream/playlist.m3u8"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1290 @@
+[
+ {
+  "id": "154sbi5sacsjcountyline",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Walnut Grove",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d10/154sbi5sacsjcountyline.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D10/SAC_SB5_SacCountyLine.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atelkgrove",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Elk Grove",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atelkgrove.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Elk_Grove_OC_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atlagunanb",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Elk Grove",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atlagunanb.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Laguna_Blvd_JNO_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atlagunasb",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atlagunasb.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Laguna_Blvd_JNO_SAC5_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atcosumnes",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atcosumnes.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Cosumnes_River_Blvd_OC_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atpocket",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atpocket.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Pocket_Rd_OC_SAC5_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atflorin",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atflorin.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Florin_Rd_SAC5_MD.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atgloria",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atgloria.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Gloria_Dr_SAC5_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5at43rdave",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5at43rdave.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_43rd_Ave_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atseamas",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atseamas.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Seamas_Ave_JNO_SAC5_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5at25th",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5at25th.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_25th_Ave_SAC5_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atsutterville",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atsutterville.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Sutterville_Rd_SAC5_MD.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5at6thave",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5at6thave.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_6th_Ave_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atvallejo",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atvallejo.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Vallejo_Way_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "qstofrsac5nb1",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/qstofrsac5nb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Q_St_Ofr_SAC5_NB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "qstofrsac5nb2",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/qstofrsac5nb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Q_St_Ofr_SAC5_NB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5nbatwstsliponramp",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5nbatwstsliponramp.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_W_St_Slip_Ramp_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5athwy50",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5athwy50.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_JCT50_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atpst",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atpst.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_P_St_SAC5_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atrichards",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atrichards.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Richards_Blvd_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atwelcamino",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atwelcamino.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_W_El_Camino_OC_SAC5_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5athwy80",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5athwy80.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_JCT5_OC_SAC80_MD.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atarenablvd1",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atarenablvd1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Arena_Blvd_SAC5_SB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atarenablvd2",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atarenablvd2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Arena_Blvd_SAC5_SB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atdelpaso",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atdelpaso.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Del_Paso_Rd_JSO_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atmetroairpkwy1",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Metro Air Pkwy",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atmetroairpkwy1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Metro_Air_Pkwy_JSO_SAC5_NB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy5atairport",
+  "route": "I-5",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy5atairport.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/5_Airport_Blvd_OC_SAC5_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy12atriovistabridgeeast",
+  "route": "SR-12",
+  "county": "Sacramento",
+  "place": "Rio Vista",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy12atriovistabridgeeast.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/12_Rio_Vista_Bridge_SAC12_EB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy20atkibbe",
+  "route": "SR-20",
+  "county": "Yuba",
+  "place": "Marysville",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy20atkibbe.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/20_Kibbe_Rd_YUB20_EB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy32atmainstchico",
+  "route": "SR-32",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy32atmainstchico.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/32_Main_St_Chico_BUT32_EB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50at4thst",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50at4thst.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_4th_St_SAC50_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50at15thst",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50at15thst.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_15th_St_WO_SAC50_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "26thstsac50wb",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/26thstsac50wb.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_26th_St_SAC50_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atjct51991",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atjct51991.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Jct_51_99_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atjct51992",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atjct51992.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Jct_51_99_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atjct51993",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atjct51993.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Jct_51_99_SAC50_WB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "stocktonbljeosac50wb",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/stocktonbljeosac50wb.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Stockton_Bl_JEO_SAC50_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50at59thstsac50wb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50at59thstsac50wb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_59th_St_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50at59thstsac50wb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50at59thstsac50wb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_59th_St_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50athoweave",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50athoweave.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Howe_Ave_SAC50_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "howeavjeosac50eb",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/howeavjeosac50eb.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Howe_Av_JEO_SAC50_EB.stream/playlist.m3u8"
+ },
+ {
+  "id": "wattavjwosac50wb",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/wattavjwosac50wb.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Watt_Av_JWO_SAC50_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atwatt",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atwatt.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Watt_Ave_OC_SAC50_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmanlovepoc1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmanlovepoc1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Manlove_POC_JEO_SAC50_EB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmanlovepoc2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmanlovepoc2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Manlove_POC_JEO_SAC50_EB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmanlovepoc3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmanlovepoc3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Manlove_POC_JEO_SAC50_EB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmayhewrdwo1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmayhewrdwo1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Mayhew_Rd_WO_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmayhewrdwo2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmayhewrdwo2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Mayhew_Rd_WO_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmayhewrdwo3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmayhewrdwo3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Mayhew_Rd_WO_SAC50_WB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmayhewrd1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmayhewrd1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Mayhew_Rd_JEO_SAC50_EB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmayhewrd2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmayhewrd2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Mayhew_Rd_JEO_SAC50_EB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmayhewrd3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmayhewrd3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Mayhew_Rd_JEO_SAC50_EB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atbradshawrd1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atbradshawrd1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Bradshaw_Rd_SAC50_EB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atbradshawrd2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atbradshawrd2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Bradshaw_Rd_SAC50_EB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atbradshawrd3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atbradshawrd3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Bradshaw_Rd_SAC50_EB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atbradshawrdeo1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atbradshawrdeo1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Bradshaw_Rd_EO_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atbradshawrdeo2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atbradshawrdeo2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Bradshaw_Rd_EO_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atbradshawrdeo3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atbradshawrdeo3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Bradshaw_Rd_EO_SAC50_WB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atroutierrdjwo1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atroutierrdjwo1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Routier_Rd_OC_JWO_SAC50_EB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atroutierrdjwo2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atroutierrdjwo2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Routier_Rd_OC_JWO_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atroutierrdjwo3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atroutierrdjwo3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Routier_Rd_OC_JWO_SAC50_WB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atroutierrdjeo1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atroutierrdjeo1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Routier_Rd_OC_JEO_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atroutierrdjeo2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atroutierrdjeo2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Routier_Rd_OC_JEO_SAC50_WB_12.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atroutierrdjeo3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atroutierrdjeo3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Routier_Rd_OC_JEO_SAC50_WB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmatherfieldeb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmatherfieldeb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Mather_Field_SAC50_EB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmatherfieldeb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmatherfieldeb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Mather_Field_SAC50_EB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atmatherfieldeb3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atmatherfieldeb3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Mather_Field_SAC50_EB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atwhiterockpoceo1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atwhiterockpoceo1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_White_Rock_POC_EO_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atwhiterockpoceo2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atwhiterockpoceo2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_White_Rock_POC_EO_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atwhiterockpoceo3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atwhiterockpoceo3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_White_Rock_POC_EO_SAC50_WB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atzinfandeldreb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atzinfandeldreb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Zinfandel_Dr_SAC50_EB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atzinfandeldreb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atzinfandeldreb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Zinfandel_Dr_SAC50_EB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atzinfandeldreb3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atzinfandeldreb3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Zinfandel_Dr_SAC50_EB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atzinfandeldreoeb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atzinfandeldreoeb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Zinfandel_Dr_EO_SAC50_EB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atzinfandeldreoeb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atzinfandeldreoeb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Zinfandel_Dr_EO_SAC50_EB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atzinfandeldreoeb3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atzinfandeldreoeb3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Zinfandel_Dr_EO_SAC50_EB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atsunriseblvdocjwowb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atsunriseblvdocjwowb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Sunrise_Blvd_OC_JWO_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atsunriseblvdocjwowb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atsunriseblvdocjwowb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Sunrise_Blvd_OC_JWO_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atsunriseblvdocjwowb3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atsunriseblvdocjwowb3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Sunrise_Blvd_OC_JWO_SAC50_WB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atsunriseblvdeowb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atsunriseblvdeowb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Sunrise_Blvd_EO_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atsunriseblvdeowb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atsunriseblvdeowb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Sunrise_Blvd_EO_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atsunriseblvdeowb3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atsunriseblvdeowb3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Sunrise_Blvd_EO_SAC50_WB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50athazelaveocwowb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50athazelaveocwowb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Hazel_Ave_OC_WO_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50athazelaveocwowb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50athazelaveocwowb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Hazel_Ave_OC_WO_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50athazelaveocwowb3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50athazelaveocwowb3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Hazel_Ave_OC_WO_SAC50_WB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50athazelocjeowb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50athazelocjeowb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Hazel_Ave_OC_JEO_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50athazelocjeowb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Rancho Cordova",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50athazelocjeowb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Hazel_Ave_OC_JEO_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atfolsomblvdsac50wb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Folsom",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atfolsomblvdsac50wb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Folsom_Blvd_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atfolsomblvdsac50wb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Folsom",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atfolsomblvdsac50wb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Folsom_Blvd_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atprairiecityrdwowb3",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Folsom",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atprairiecityrdwowb3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Prairie_City_Rd_WO_SAC50_WB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atprairiecityrdwowb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Folsom",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atprairiecityrdwowb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Prairie_City_Rd_WO_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atprairiecityrdwowb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Folsom",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atprairiecityrdwowb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Prairie_City_Rd_WO_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atprairiecity",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Folsom",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atprairiecity.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_Prairie_City_Rd_SAC50_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atebidwellstsac50wb1",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Folsom",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atebidwellstsac50wb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_E_Bidwell_St_SAC50_WB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy50atebidwellstsac50wb2",
+  "route": "US-50",
+  "county": "Sacramento",
+  "place": "Folsom",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy50atebidwellstsac50wb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/50_E_Bidwell_St_SAC50_WB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51attst",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51attst.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_T_St_SAC51_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51atnst",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51atnst.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_N_St_SAC51_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51athst",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51athst.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_H_St_SAC51_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51atest",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51atest.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_E_St_UC_SAC51_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51atexpositionblvd",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51atexpositionblvd.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_Exposition_Blvd_OC_SAC51_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51atarden",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51atarden.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_Arden_Way_JNO_SAC51_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51atelcaminoave",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51atelcaminoave.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_El_Camino_OC_SAC51_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51atwatt",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51atwatt.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_Watt_Ave_OC_SAC51_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51athwy1601",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51athwy1601.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_JCT160_SAC51_NB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51athwy1602",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51athwy1602.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_JCT160_SAC51_NB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy51athwy1603",
+  "route": "SR-51",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy51athwy1603.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/51_JCT160_SAC51_NB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy70atsaddleback",
+  "route": "SR-70",
+  "county": "Yuba",
+  "place": "Marysville",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy70atsaddleback.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/70_Saddleback_Dr_YUB70_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy70atramirez",
+  "route": "SR-70",
+  "county": "Yuba",
+  "place": "Yuba City",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy70atramirez.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/70_Ramirez_Rd_YUB70_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy70wocoxln",
+  "route": "SR-70",
+  "county": "Butte",
+  "place": "Oroville",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy70wocoxln.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/70_Cox_Ln_WO_BUT70_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy80atbrytebend",
+  "route": "I-80",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy80atbrytebend.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_Bryte_Bend_Bridge_SAC80_EB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy80attruxel",
+  "route": "I-80",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy80attruxel.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_Truxel_Rd_OC_SAC80_EB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy80atnorthgate",
+  "route": "I-80",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy80atnorthgate.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_Northgate_Blvd_JWO_SAC80_MD.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy80atnorwood",
+  "route": "I-80",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy80atnorwood.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_Norwood_Ave_OC_SAC80_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy80atraley",
+  "route": "I-80",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy80atraley.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_Raley_Blvd_OC_SAC80_WBy.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy80atwatt",
+  "route": "I-80",
+  "county": "Sacramento",
+  "place": "North Highlands",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy80atwatt.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_Watt_Ave_OC_SAC80_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy80atjct244eb",
+  "route": "I-80",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy80atjct244eb.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_JCT244_SAC80_EB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy80at5180split",
+  "route": "I-80",
+  "county": "Sacramento",
+  "place": "North Highlands",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy80at5180split.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_JCT51_SPLIT_SAC80_EB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy80atgreenback",
+  "route": "I-80",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy80atgreenback.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_Greenback_Ln_OC_SAC80_EB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy80atantelope",
+  "route": "I-80",
+  "county": "Sacramento",
+  "place": "Citrus Heights",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy80atantelope.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/80_Antelope_Rd_OC_SAC80_WB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99attwincities",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Galt",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99attwincities.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Twin_Cities_Rd_JSO_SAC99_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atdillard",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Elk Grove",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atdillard.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Dillard_Rd_SAC99_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99ateschinger",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Elk Grove",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99ateschinger.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Eschinger_Rd_SAC99_SB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atgrantline",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Elk Grove",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atgrantline.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Grantline_Rd_OC_SAC99_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "sheldonrdjnosac99sb1",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Elk Grove",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/sheldonrdjnosac99sb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Sheldon_Rd_JNO_SAC99_SB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "sheldonrdjnosac99sb2",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Elk Grove",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/sheldonrdjnosac99sb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Sheldon_Rd_JNO_SAC99_SB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "sheldonrdjnosac99sb3",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Elk Grove",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/sheldonrdjnosac99sb3.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Sheldon_Rd_JNO_SAC99_SB_3.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atcalvine",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Elk Grove",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atcalvine.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Calvine_Rd_JNO_SAC99_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atmack",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atmack.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Mack_Rd_OC_SAC99_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atflorinrdjsosac99nb1",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "SR99 at Florin Rd",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atflorinrdjsosac99nb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Florin_Rd_JSO_SAC99_NB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atflorinrdjsosac99nb2",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "SR99 at Florin Rd",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atflorinrdjsosac99nb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Florin_Rd_JSO_SAC99_NB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99at47thave",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99at47thave.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_47th_Ave_OC_SAC99_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atmartinlutherking",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atmartinlutherking.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Martin_Luther_King_SAC99_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atfruitridge",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atfruitridge.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Fruitridge_Rd_JSO_SAC99_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99at14thave",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99at14thave.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_14th_Ave_SAC99_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99at4thave",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99at4thave.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_4th_Ave_SAC99_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99athwy51",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99athwy51.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_JCT5_SAC99_SB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99athwy52",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99athwy52.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_JCT5_SAC99_SB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atelkhorn",
+  "route": "SR-99",
+  "county": "Sacramento",
+  "place": "Sacramento",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atelkhorn.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_W_Elkhorn_Blvd_JNO_SAC99_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atriegonb",
+  "route": "SR-99",
+  "county": "Sutter",
+  "place": "Nicolaus",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atriegonb.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_W_Riego_Rd_OC_SUT99_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atlincoln",
+  "route": "SR-99",
+  "county": "Sutter",
+  "place": "Yuba City",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atlincoln.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Lincoln_Rd_SUT99_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atbridge",
+  "route": "SR-99",
+  "county": "Sutter",
+  "place": "Yuba City",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atbridge.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Bridge_St_SUT99_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atroute20",
+  "route": "SR-99",
+  "county": "Sutter",
+  "place": "Yuba City",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atroute20.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_JCT20_SUT99_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99athwy162",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Oroville",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99athwy162.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_JCT162E_BUT99_NB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atneal",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Durham",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atneal.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Neal_Rd_JSO_BUT99_SB.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atsouthgate1",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atsouthgate1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Southgate_Ln_BUT99_NB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atsouthgate2",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atsouthgate2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Southgate_Ln_BUT99_NB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "skywaybut99nb2",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/skywaybut99nb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Skyway_JSO_BUT99_NB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "skywaybut99nb1",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/skywaybut99nb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Skyway_JSO_BUT99_NB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atskyway1",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atskyway1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Skyway_BUT99_NB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atskyway2",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atskyway2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Skyway_BUT99_NB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "east20thbut99nb1",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/east20thbut99nb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_East_20th_BUT99_NB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "east20thbut99nb2",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/east20thbut99nb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_East_20th_BUT99_NB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99athwy321",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99athwy321.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_JCT32_UC_BUT99_NB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99athwy322",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99athwy322.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_JCT32_UC_BUT99_NB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99ateastavebut99sb1",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99ateastavebut99sb1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_East_Ave_BUT99_SB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99ateastavebut99sb2",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99ateastavebut99sb2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_East_Ave_BUT99_SB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99ateeatonrd2",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99ateeatonrd2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_E_Eaton_Rd_JNO_BUT99_SB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99ateeatonrd1",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99ateeatonrd1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_E_Eaton_Rd_JNO_BUT99_SB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atgarnerlane1",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atgarnerlane1.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Garner_Ln_BUT99_SB_1.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy99atgarnerlane2",
+  "route": "SR-99",
+  "county": "Butte",
+  "place": "Chico",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy99atgarnerlane2.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/99_Garner_Ln_BUT99_SB_2.stream/playlist.m3u8"
+ },
+ {
+  "id": "hwy160atshermanislandrd",
+  "route": "SR-160",
+  "county": "Sacramento",
+  "place": "Rio Vista",
+  "page": "http://cwwp2.dot.ca.gov/vm/loc/d3/hwy160atshermanislandrd.htm",
+  "stream": "https://wzmedia.dot.ca.gov/D3/160_W_Sherman_Island_Rd_JSO_SAC160_NB.stream/playlist.m3u8"
+ }
+]

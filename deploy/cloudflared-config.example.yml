@@ -1,0 +1,12 @@
+# Cloudflare Tunnel: expose the recordings tree over HTTPS with no open ports.
+# 1) cloudflared tunnel login && cloudflared tunnel create caltrans-media
+# 2) put the generated JSON credentials path below, set your hostname
+# 3) in Cloudflare Zero Trust -> Tunnel -> Public Hostname add:
+#      hostname: media.yourdomain.tld  ->  HTTP://localhost:8090
+tunnel: caltrans-media
+credentials-file: /etc/cloudflared/caltrans-media.json
+
+ingress:
+  - hostname: media.yourdomain.tld
+    service: http://localhost:8090
+  - service: http_status:404

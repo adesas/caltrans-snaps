@@ -1,0 +1,26 @@
+:root { color-scheme: dark; --bg:#101318; --panel:#1a1f28; --acc:#4cc2ff; --txt:#e6e9ee; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--txt); display:flex; flex-direction:column; min-height:100vh; }
+header { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.9rem 1.2rem; border-bottom:1px solid #2a3140; }
+h1 { margin:0; font-size:1.25rem; } .sub { margin:.25rem 0 0; color:#9aa5b5; font-size:.85rem; }
+a { color:var(--acc); }
+.btn { background:#243247; color:var(--txt); border:1px solid #39506e; border-radius:8px; padding:.45rem .8rem; cursor:pointer; text-decoration:none; font:inherit; }
+.btn:hover { background:#2d405c; }
+main { flex:1; display:flex; gap:1rem; padding:1rem; }
+#sidebar { width:300px; overflow-y:auto; max-height:78vh; }
+#sidebar h2 { font-size:.85rem; color:#8fa2bd; margin:.8rem .2rem .3rem; text-transform:uppercase; letter-spacing:.06em; }
+.cam { display:flex; flex-direction:column; align-items:flex-start; gap:.15rem; width:100%; text-align:left; background:var(--panel); color:var(--txt); border:1px solid #2a3140; border-radius:8px; padding:.4rem .5rem; margin:.25rem 0; cursor:pointer; }
+.cam:hover,.cam.sel { border-color:var(--acc); }
+.cam img { width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:4px; background:#000; }
+.cam small { color:#8fa2bd; }
+#playerPane { flex:1; min-width:0; }
+#playerBox { position:relative; background:#000; border-radius:10px; overflow:hidden; aspect-ratio:16/9; }
+video { width:100%; height:100%; }
+#noSel { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#5c6a80; font-size:1.2rem; }
+#controls { display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; margin:.8rem 0; }
+#hourBar { display:flex; flex-wrap:wrap; gap:.3rem; }
+.hour { width:2.6rem; padding:.35rem 0; text-align:center; background:var(--panel); color:#8fa2bd; border:1px solid #2a3140; border-radius:6px; cursor:pointer; }
+.hour.has { color:var(--txt); border-color:#3b6a4f; } .hour.empty { opacity:.35; } .hour.on { background:var(--acc); color:#04121f; font-weight:600; }
+#camMeta { color:#b7c2d2; font-size:.95rem; min-height:1.5em; } .miss { color:#e28c8c; }
+footer { padding:.6rem 1.2rem; color:#5c6a80; font-size:.8rem; border-top:1px solid #2a3140; }
+@media (max-width:800px){ main{flex-direction:column} #sidebar{width:100%; max-height:none} }
