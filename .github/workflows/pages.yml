@@ -10,11 +10,14 @@ permissions:
   id-token: write
 jobs:
   deploy:
-    environment: { name: github-pages, url: ${{ steps.pages.outputs.url }} }
+    environment:
+      name: github-pages
+      url: "${{ steps.pages.outputs.url }}"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
-        with: { path: web }
+        with:
+          path: web
       - id: pages
         uses: actions/deploy-pages@v4
