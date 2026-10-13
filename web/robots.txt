@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adesas.github.io/caltrans-snaps/sitemap.xml
