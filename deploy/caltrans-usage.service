@@ -1,0 +1,6 @@
+[Unit]
+Description=caltrans-snaps usage report generator (one-shot)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/al/caltrans_snaps/scripts/usage_report.py

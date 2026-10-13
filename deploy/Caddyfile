@@ -1,21 +1,54 @@
 {
 	auto_https off
-	admin off
+	# admin API on loopback only — lets `systemctl reload caddy` work;
+	# it is not reachable from outside this box (tunnel routes :8090 only)
+	admin 127.0.0.1:2019
 }
 
 :8090 {
+	# Access log (JSON, rotated) — the usage report reads this to show who
+	# watched/exported what. cloudflared sets X-Forwarded-For and Caddy trusts
+	# localhost connections by default, so remote_ip is the real visitor IP.
+	log {
+		output file /mnt/8tb/caltrans-snaps/logs/access.log {
+			roll_size 20MiB
+			roll_keep 14
+			roll_local_time
+		}
+		format json
+	}
+
 	# apex + www -> GitHub Pages site (traffic arrives via Cloudflare Tunnel)
 	@apex host sacvalleycams.com www.sacvalleycams.com
 	redir @apex https://adesas.github.io/caltrans-snaps/ permanent
 
 	root * /mnt/8tb/caltrans-snaps
-	file_server
 
-	# GitHub Pages origin must be allowed to fetch HLS
-	header Access-Control-Allow-Origin *
+	# Usage report: reachable ONLY from a direct localhost connection. Anything
+	# arriving through the Cloudflare Tunnel (real visitor IP via XFF, or a
+	# 127.0.0.1 socket carrying Cf-Ray + XFF) gets 403.
+	@admin path /admin/*
+	@localDirect {
+		remote_ip 127.0.0.1 ::1
+		not header Cf-Ray *
+	}
+	handle @admin {
+		handle @localDirect {
+			header Cache-Control "no-store"
+			file_server
+		}
+		respond 403
+	}
 
-	@m3u8 path *.m3u8
-	header @m3u8 Content-Type application/vnd.apple.mpegurl
-	@ts path *.ts
-	header @ts Content-Type video/mp2t
+	handle {
+		# GitHub Pages origin must be allowed to fetch HLS
+		header Access-Control-Allow-Origin *
+
+		@m3u8 path *.m3u8
+		header @m3u8 Content-Type application/vnd.apple.mpegurl
+		@ts path *.ts
+		header @ts Content-Type video/mp2t
+
+		file_server
+	}
 }

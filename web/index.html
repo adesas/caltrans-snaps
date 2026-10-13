@@ -43,8 +43,8 @@
         <input type="number" id="exportLen" min="0.5" max="60" step="0.5" value="5">
         min
       </label>
-      <label id="vttLabel" title="same-named WebVTT sidecar: VLC/mpv auto-load it and show the wall clock as subtitles">
-        <input type="checkbox" id="exportVtt" checked> .vtt clock
+      <label id="vttLabel" title="downloads x.clock.vtt — open it from your player's subtitle menu (deliberately NOT same-named: some players auto-pair x.ts + x.vtt and choke on WebVTT)">
+        <input type="checkbox" id="exportVtt"> .vtt clock
       </label>
       <span id="exportRangeHint"></span>
       <span id="exportStatus"></span>

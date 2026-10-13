@@ -105,14 +105,30 @@ cloudflared tunnel --config /etc/cloudflared/config.yml run &
    the playhead: the browser fetches the hour's `.ts` segments and joins them
    into one MPEG‑TS file (plays in VLC; `ffmpeg -i x.ts -c copy out.mp4` to
    remux) — zero backend, no transcoding. Export names carry exact
-   wall-clock times (`…_180526-181030.ts`) and an optional same-named `.vtt`
-   sidecar shows the clock as subtitles in VLC/mpv. The player also overlays a
-   live recording wall-clock on the video. **Request a county** opens a
-   prefilled GitHub Issue.
+   wall-clock times (`…_180526-181030.ts`); an optional `x.clock.vtt` sidecar
+   (deliberately not auto-paired by players — load it from the subtitle menu)
+   shows the clock while playing. The player also overlays a live recording
+   wall-clock on the video. **Request a county** opens a prefilled GitHub
+   Issue.
 4. Wall-clock accuracy: new recordings carry `#EXT-X-PROGRAM-DATE-TIME` tags,
    so the clock stays exact even across mid-hour reconnect gaps (repaired
    retroactively by `scripts/repair_playlists.py`, which also rebuilds any
    hour whose playlist drifted from the segments on disk).
+
+### Usage / access report (localhost-only)
+
+Caddy logs every media request as JSON (`logs/access.log`, rotated 20 MiB ×14);
+behind cloudflared the real visitor IP comes from `Cf-Connecting-Ip` /
+`X-Forwarded-For`. A systemd timer runs `scripts/usage_report.py` every minute,
+which groups traffic per client IP and flags **exports** (≥15 segments of one
+hour within 60 s, or a `.vtt` fetch). View it on the recording box at
+`http://localhost:8090/admin/usage.html` — Caddy serves `/admin/*` only to
+direct localhost connections; anything through the tunnel gets 403.
+
+```bash
+sudo cp deploy/caltrans-usage.{service,timer} /etc/systemd/system/
+sudo systemctl daemon-reload && sudo systemctl enable --now caltrans-usage.timer
+```
 
 ## Repo layout
 
@@ -120,8 +136,8 @@ cloudflared tunnel --config /etc/cloudflared/config.yml run &
 src/snaps/     catalog.py (ArcGIS selection) · recorder.py · retention.py · main.py
 config/        cameras.yaml  (recorder config; generated, hand-editable)
 web/           static GitHub Pages site + cameras.json
-deploy/        systemd unit · Caddyfile · cloudflared example
-scripts/       repair_playlists.py (playlist↔disk drift repair) · measure_latency.py · setup-tunnel.sh
+deploy/        systemd units (recorder, usage timer) · Caddyfile · cloudflared example
+scripts/       usage_report.py (per-IP usage/export report) · repair_playlists.py · measure_latency.py · setup-tunnel.sh
 legacy_snapshots/  old still-image experiments (not part of the system)
 ```
 

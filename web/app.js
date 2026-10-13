@@ -289,8 +289,10 @@ async function runExport() {
     downloadBlob(blob, `${base}.ts`);
 
     if ($("#exportVtt").checked) {
-      // same-named WebVTT sidecar: one cue per segment labeled with its wall
-      // clock — VLC/mpv auto-load x.ts + x.vtt and show the clock as subtitles
+      // WebVTT sidecar with one cue per segment labeled with its wall clock.
+      // Named x.clock.vtt on purpose: NOT auto-paired by players (some choke
+      // when they auto-load a same-named .vtt next to the .ts) — open it from
+      // the player's subtitle menu to get an on-screen recording clock.
       const t0 = segs[0].start;
       const vtt = ["WEBVTT", ""];
       for (const s of segs) {
@@ -298,7 +300,7 @@ async function runExport() {
         const d = new Date(s.wall);
         vtt.push(`${vts(a)} --> ${vts(b)}`, `${fmtDate(d)} ${hhmmss(d)}`, "");
       }
-      downloadBlob(new Blob([vtt.join("\n")], { type: "text/vtt" }), `${base}.vtt`);
+      downloadBlob(new Blob([vtt.join("\n")], { type: "text/vtt" }), `${base}.clock.vtt`);
     }
 
     setExportStatus(
