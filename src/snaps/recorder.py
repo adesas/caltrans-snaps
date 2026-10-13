@@ -65,7 +65,10 @@ class CameraRecorder:
             # append_list + per-attempt prefix: if Caltrans 404s the feed mid-hour,
             # the restart appends new segments instead of clobbering earlier ones.
             # (flag names are lowercase on ffmpeg >= 6; uppercase broke parsing on 7.1)
-            "-hls_flags", "append_list+independent_segments",
+            # program_date_time: each attempt's segments carry
+            # #EXT-X-PROGRAM-DATE-TIME so players/exports can map video time
+            # to wall-clock exactly, even across mid-hour reconnect gaps.
+            "-hls_flags", "append_list+independent_segments+program_date_time",
             "-hls_segment_filename", str(out_dir / f"a{self.attempt}_%03d.ts"),
             str(out_dir / "index.m3u8"),
         ]
@@ -73,7 +76,13 @@ class CameraRecorder:
     def _start_session(self, hour_start: datetime) -> None:
         out_dir = hour_dir(self.root, self.cam_id, hour_start)
         out_dir.mkdir(parents=True, exist_ok=True)
-        log.info("[%s] starting session %s", self.cam_id, out_dir)
+        # Prefix numbering is per hour-dir, NOT per process: a service restart
+        # mid-hour must never reuse an a<N>_ prefix that already exists (it
+        # would overwrite earlier segments). Scan for the next free prefix.
+        used = [int(m.group(1)) for f in out_dir.glob("a*_*.ts")
+                if (m := re.match(r"a(\d+)_", f.name))]
+        self.attempt = max(used, default=-1) + 1
+        log.info("[%s] starting session %s (attempt a%d)", self.cam_id, out_dir, self.attempt)
         self.proc = subprocess.Popen(
             self._ffmpeg_cmd(out_dir),
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
@@ -147,12 +156,10 @@ class CameraRecorder:
                 if self.stop.is_set():
                     break
                 if hour_start == self.session_hour_start and alive is False:
-                    # mid-hour stream drop: back off, then append a new attempt
-                    self.attempt += 1
+                    # mid-hour stream drop: back off; _start_session picks the
+                    # next free segment prefix from what is on disk
                     self.consecutive_failures += 1
-                    time.sleep(min(2 ** min(self.attempt, 5), 30))
-                else:
-                    self.attempt = 0
+                    time.sleep(min(2 ** min(self.attempt + 1, 5), 30))
             if self.stop.is_set():
                 break
             if self.proc is None:

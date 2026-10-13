@@ -104,8 +104,15 @@ cloudflared tunnel --config /etc/cloudflared/config.yml run &
    and an hls.js player. **Export** downloads the whole hour or a clip from
    the playhead: the browser fetches the hour's `.ts` segments and joins them
    into one MPEG‑TS file (plays in VLC; `ffmpeg -i x.ts -c copy out.mp4` to
-   remux) — zero backend, no transcoding. **Request a county** opens a
+   remux) — zero backend, no transcoding. Export names carry exact
+   wall-clock times (`…_180526-181030.ts`) and an optional same-named `.vtt`
+   sidecar shows the clock as subtitles in VLC/mpv. The player also overlays a
+   live recording wall-clock on the video. **Request a county** opens a
    prefilled GitHub Issue.
+4. Wall-clock accuracy: new recordings carry `#EXT-X-PROGRAM-DATE-TIME` tags,
+   so the clock stays exact even across mid-hour reconnect gaps (repaired
+   retroactively by `scripts/repair_playlists.py`, which also rebuilds any
+   hour whose playlist drifted from the segments on disk).
 
 ## Repo layout
 
@@ -114,7 +121,7 @@ src/snaps/     catalog.py (ArcGIS selection) · recorder.py · retention.py · m
 config/        cameras.yaml  (recorder config; generated, hand-editable)
 web/           static GitHub Pages site + cameras.json
 deploy/        systemd unit · Caddyfile · cloudflared example
-scripts/       (reserved: incident clip export, health dashboard)
+scripts/       repair_playlists.py (playlist↔disk drift repair) · measure_latency.py · setup-tunnel.sh
 legacy_snapshots/  old still-image experiments (not part of the system)
 ```
 

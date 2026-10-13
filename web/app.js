@@ -42,6 +42,9 @@ async function init() {
   $("#dayPick").min = fmtDate(min);
   $("#dayPick").onchange = renderHourBar;
   $("#nowBtn").onclick = () => { if (currentCam) selectHour(new Date().getHours()); };
+  const video = $("#video");
+  video.addEventListener("timeupdate", tickClock);
+  video.addEventListener("loadedmetadata", tickClock);
   renderHourBar();
 }
 
@@ -97,10 +100,12 @@ function selectCam(cam) {
 function selectHour(hh) {
   if (!currentCam) return;
   currentHh = hh;
+  segTable = null;   // refetch the playlist for the wall-clock table
   document.querySelectorAll(".hour").forEach((el) =>
     el.classList.toggle("on", +el.dataset.hh === hh));
   const url = hourUrl(currentCam.id, $("#dayPick").value || fmtDate(new Date()), hh);
   playUrl(url);
+  ensureSegs().catch(() => { segTable = null; }).finally(tickClock);
 }
 
 function playUrl(url) {
@@ -123,36 +128,119 @@ function playUrl(url) {
   video.play().catch(() => {});
 }
 
-/* ---------------- export ---------------- */
+/* ---------------- wall-clock segment table ---------------- */
 
-// Parse an HLS playlist into [{url, start, dur}] using EXTINF durations.
-function parseSegments(m3u8Text, baseDir) {
+// Parse an HLS playlist into [{url, start, dur, wall, pdt}] using EXTINF
+// durations and #EXT-X-PROGRAM-DATE-TIME tags (written by the recorder's
+// program_date_time flag). Segments without an explicit PDT continue from the
+// previous segment's wall time; before the first PDT we fall back to the
+// hour-directory timestamp (approximate across gaps).
+function parseSegments(m3u8Text, baseDir, hourStartMs) {
   const out = [];
-  let t = 0;
-  let pendingDur = null;
+  let t = 0, pendingDur = null, pendingPdt = null, prevWallEnd = hourStartMs;
   for (const raw of m3u8Text.split("\n")) {
     const line = raw.trim();
     if (line.startsWith("#EXTINF:")) {
       pendingDur = parseFloat(line.slice(8));
+    } else if (line.startsWith("#EXT-X-PROGRAM-DATE-TIME:")) {
+      pendingPdt = Date.parse(line.slice(25));  // tag is 25 chars incl. ':'
     } else if (line && !line.startsWith("#")) {
       const dur = Number.isFinite(pendingDur) ? pendingDur : 0;
-      out.push({ url: new URL(line, baseDir).href, start: t, dur });
+      const pdt = Number.isFinite(pendingPdt);
+      const wall = pdt ? pendingPdt : prevWallEnd;
+      out.push({ url: new URL(line, baseDir).href, start: t, dur, wall, pdt });
       t += dur;
+      prevWallEnd = wall + dur * 1000;
       pendingDur = null;
+      pendingPdt = null;
     }
   }
   return out;
 }
 
-async function runExport() {
-  if (!currentCam || currentHh === null) {
-    setExportStatus("pick a camera and hour first", true);
+let segTable = null;   // {key, segs, exact} — parsed playlist of the loaded hour
+
+async function ensureSegs(force) {
+  if (!currentCam || currentHh === null) throw new Error("pick a camera and hour first");
+  const dateStr = $("#dayPick").value || fmtDate(new Date());
+  const key = `${currentCam.id}|${dateStr}|${currentHh}`;
+  if (segTable && segTable.key === key && !force) return segTable;
+  const playlistUrl = hourUrl(currentCam.id, dateStr, currentHh);
+  const res = await fetch(playlistUrl);
+  if (!res.ok) throw new Error(`no recording for this hour (HTTP ${res.status})`);
+  const hourStartMs = new Date(`${dateStr}T00:00:00`).getTime() + currentHh * 3600e3;
+  const baseDir = playlistUrl.slice(0, playlistUrl.lastIndexOf("/") + 1);
+  const segs = parseSegments(await res.text(), baseDir, hourStartMs);
+  if (!segs.length) throw new Error("this hour has no segments");
+  segTable = { key, segs, exact: segs.some((s) => s.pdt) };
+  return segTable;
+}
+
+// wall-clock ms for position t (seconds into the joined timeline)
+function wallAt(segs, t) {
+  const s = segs.find((x) => t < x.start + x.dur) || segs[segs.length - 1];
+  return s.wall + Math.max(0, t - s.start) * 1000;
+}
+
+const hhmmss = (d) => `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+const stampSecs = (d) => `${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
+
+function tickClock() {
+  const el = $("#clock");
+  const video = $("#video");
+  if (!segTable || !currentCam || !isFinite(video.currentTime)) {
+    el.classList.add("hide");
     return;
   }
+  const d = new Date(wallAt(segTable.segs, video.currentTime));
+  el.textContent = (segTable.exact ? "" : "≈") + `${fmtDate(d)} ${hhmmss(d)}`;
+  el.title = segTable.exact
+    ? "recording wall clock"
+    : "approximate — this hour predates program-date-time tags; exact for new recordings";
+  el.classList.remove("hide");
+  updateRangeHint();
+}
+
+function updateRangeHint() {
+  const hint = $("#exportRangeHint");
+  if (!segTable || $("#exportRange").value !== "clip") { hint.textContent = ""; return; }
+  const segs = segTable.segs;
+  const start = Math.max(0, $("#video").currentTime || 0);
+  if (start >= segs[segs.length - 1].start + segs[segs.length - 1].dur) {
+    hint.textContent = ""; return;
+  }
+  const lenMin = Math.max(0.5, Math.min(60, +$("#exportLen").value || 5));
+  const w0 = new Date(wallAt(segs, start));
+  const w1 = new Date(wallAt(segs, Math.min(start + lenMin * 60,
+    segs[segs.length - 1].start + segs[segs.length - 1].dur)));
+  hint.textContent = `${segTable.exact ? "" : "≈"}${hhmmss(w0)} → ${hhmmss(w1)}`;
+}
+
+/* ---------------- export ---------------- */
+
+function downloadBlob(blob, name) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 30_000);
+}
+
+const vts = (sec) => {
+  const h = Math.floor(sec / 3600), m = Math.floor(sec / 60) % 60;
+  const s = sec - Math.floor(sec / 60) * 60;
+  return `${pad(h)}:${pad(m)}:${s.toFixed(3).padStart(6, "0")}`;
+};
+
+async function runExport() {
   const btn = $("#exportBtn");
   if (exporting) {  // second click cancels
     exporting = false;
     if (exportAbort) exportAbort.abort();
+    return;
+  }
+  if (!currentCam || currentHh === null) {
+    setExportStatus("pick a camera and hour first", true);
     return;
   }
   exporting = true;
@@ -160,30 +248,28 @@ async function runExport() {
   btn.classList.add("busy");
   btn.textContent = "⏳ Cancel";
   try {
+    const st = await ensureSegs(true);   // fresh playlist: the current hour is still growing
+    let segs = st.segs;
     const dateStr = $("#dayPick").value || fmtDate(new Date());
     const hh = currentHh;
-    const playlistUrl = hourUrl(currentCam.id, dateStr, hh);
-    const baseDir = playlistUrl.slice(0, playlistUrl.lastIndexOf("/") + 1);
-    const res = await fetch(playlistUrl, { signal: exportAbort.signal });
-    if (!res.ok) throw new Error(`no recording for this hour (HTTP ${res.status})`);
-    let segs = parseSegments(await res.text(), baseDir);
-    if (!segs.length) throw new Error("this hour has no segments");
 
-    // clip mode: start at the playhead, default length from the input
+    // clip mode: whole segments around the playhead (TS segments are
+    // independently playable, so we snap to segment boundaries)
     const isClip = $("#exportRange").value === "clip";
-    let stamp = "";
     if (isClip) {
-      const lenMin = Math.max(1, Math.min(60, +$("#exportLen").value || 5));
+      const lenMin = Math.max(0.5, Math.min(60, +$("#exportLen").value || 5));
       const start = Math.max(0, $("#video").currentTime || 0);
       const end = Math.min(segs[segs.length - 1].start + segs[segs.length - 1].dur,
                            start + lenMin * 60);
-      // keep from the segment containing the playhead so the clip opens on a
-      // keyframe-aligned chunk (TS segments are independently playable)
       segs = segs.filter((s) => s.start < end && s.start + s.dur > start);
-      const d = new Date(`${dateStr}T00:00:00`);
-      d.setMinutes(d.getMinutes() + Math.round(start));
-      stamp = `-${pad(d.getHours())}${pad(d.getMinutes())}`;
     }
+
+    // exact wall-clock span of what is actually being written (segment-aligned)
+    const w0 = new Date(segs[0].wall);
+    const w1 = new Date(segs[segs.length - 1].wall + segs[segs.length - 1].dur * 1000);
+    const base = isClip
+      ? `${currentCam.id}_${fmtDate(w0)}-${pad(hh)}_${stampSecs(w0)}-${stampSecs(w1)}`
+      : `${currentCam.id}_${dateStr}-${pad(hh)}`;
 
     const total = segs.reduce((a, s) => a + s.dur, 0);
     setExportStatus(`downloading 0/${segs.length} segments…`);
@@ -200,13 +286,24 @@ async function runExport() {
     // MPEG-TS concatenation: joining raw .ts chunks yields a valid MPEG-TS file
     const blob = new Blob(parts, { type: "video/mp2t" });
     parts.length = 0;
-    const name = `${currentCam.id}_${dateStr}-${pad(hh)}${stamp}.ts`;
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = name;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(a.href), 30_000);
-    setExportStatus(`saved ${name} (${Math.round(total / 60)} min, MPEG‑TS — plays in VLC; remux: ffmpeg -i "${name}" -c copy out.mp4)`);
+    downloadBlob(blob, `${base}.ts`);
+
+    if ($("#exportVtt").checked) {
+      // same-named WebVTT sidecar: one cue per segment labeled with its wall
+      // clock — VLC/mpv auto-load x.ts + x.vtt and show the clock as subtitles
+      const t0 = segs[0].start;
+      const vtt = ["WEBVTT", ""];
+      for (const s of segs) {
+        const a = s.start - t0, b = a + s.dur;
+        const d = new Date(s.wall);
+        vtt.push(`${vts(a)} --> ${vts(b)}`, `${fmtDate(d)} ${hhmmss(d)}`, "");
+      }
+      downloadBlob(new Blob([vtt.join("\n")], { type: "text/vtt" }), `${base}.vtt`);
+    }
+
+    setExportStatus(
+      `saved ${base}.ts — ${segTable.exact ? "" : "≈"}${hhmmss(w0)} → ${hhmmss(w1)}` +
+      ` (${(total / 60).toFixed(1)} min MPEG‑TS, plays in VLC; remux: ffmpeg -i "${base}.ts" -c copy out.mp4)`);
   } catch (e) {
     if (e.name === "AbortError") setExportStatus("export cancelled", true);
     else setExportStatus(String(e.message || e), true);
@@ -215,6 +312,7 @@ async function runExport() {
     exportAbort = null;
     btn.classList.remove("busy");
     btn.textContent = "⬇ Export";
+    updateRangeHint();
   }
 }
 
@@ -226,9 +324,13 @@ function setExportStatus(msg, isError) {
 
 function initExport() {
   $("#exportBtn").onclick = runExport;
-  const syncLen = () => { $("#lenLabel").style.display =
-    $("#exportRange").value === "clip" ? "" : "none"; };
+  const syncLen = () => {
+    const clip = $("#exportRange").value === "clip";
+    $("#lenLabel").style.display = clip ? "" : "none";
+    updateRangeHint();
+  };
   $("#exportRange").onchange = syncLen;
+  $("#exportLen").oninput = updateRangeHint;
   syncLen();
 }
 

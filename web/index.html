@@ -23,6 +23,7 @@
   <section id="playerPane">
     <div id="playerBox">
       <video id="video" playsinline controls muted></video>
+      <div id="clock"></div>
       <div id="noSel">← pick a camera</div>
     </div>
     <div id="controls">
@@ -39,9 +40,13 @@
         </select>
       </label>
       <label id="lenLabel">Length
-        <input type="number" id="exportLen" min="1" max="60" value="5">
+        <input type="number" id="exportLen" min="0.5" max="60" step="0.5" value="5">
         min
       </label>
+      <label id="vttLabel" title="same-named WebVTT sidecar: VLC/mpv auto-load it and show the wall clock as subtitles">
+        <input type="checkbox" id="exportVtt" checked> .vtt clock
+      </label>
+      <span id="exportRangeHint"></span>
       <span id="exportStatus"></span>
     </div>
     <div id="camMeta"></div>
