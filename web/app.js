@@ -6,7 +6,10 @@ const $ = (s) => document.querySelector(s);
 if (location.hostname === "localhost") CFG.MEDIA_BASE = "http://localhost:8090";
 let catalog = null;
 let currentCam = null;
+let currentHh = null;
 let hls = null;
+let exporting = false;
+let exportAbort = null;
 
 const pad = (n) => String(n).padStart(2, "0");
 const fmtDate = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
@@ -93,6 +96,7 @@ function selectCam(cam) {
 
 function selectHour(hh) {
   if (!currentCam) return;
+  currentHh = hh;
   document.querySelectorAll(".hour").forEach((el) =>
     el.classList.toggle("on", +el.dataset.hh === hh));
   const url = hourUrl(currentCam.id, $("#dayPick").value || fmtDate(new Date()), hh);
@@ -119,4 +123,114 @@ function playUrl(url) {
   video.play().catch(() => {});
 }
 
+/* ---------------- export ---------------- */
+
+// Parse an HLS playlist into [{url, start, dur}] using EXTINF durations.
+function parseSegments(m3u8Text, baseDir) {
+  const out = [];
+  let t = 0;
+  let pendingDur = null;
+  for (const raw of m3u8Text.split("\n")) {
+    const line = raw.trim();
+    if (line.startsWith("#EXTINF:")) {
+      pendingDur = parseFloat(line.slice(8));
+    } else if (line && !line.startsWith("#")) {
+      const dur = Number.isFinite(pendingDur) ? pendingDur : 0;
+      out.push({ url: new URL(line, baseDir).href, start: t, dur });
+      t += dur;
+      pendingDur = null;
+    }
+  }
+  return out;
+}
+
+async function runExport() {
+  if (!currentCam || currentHh === null) {
+    setExportStatus("pick a camera and hour first", true);
+    return;
+  }
+  const btn = $("#exportBtn");
+  if (exporting) {  // second click cancels
+    exporting = false;
+    if (exportAbort) exportAbort.abort();
+    return;
+  }
+  exporting = true;
+  exportAbort = new AbortController();
+  btn.classList.add("busy");
+  btn.textContent = "⏳ Cancel";
+  try {
+    const dateStr = $("#dayPick").value || fmtDate(new Date());
+    const hh = currentHh;
+    const playlistUrl = hourUrl(currentCam.id, dateStr, hh);
+    const baseDir = playlistUrl.slice(0, playlistUrl.lastIndexOf("/") + 1);
+    const res = await fetch(playlistUrl, { signal: exportAbort.signal });
+    if (!res.ok) throw new Error(`no recording for this hour (HTTP ${res.status})`);
+    let segs = parseSegments(await res.text(), baseDir);
+    if (!segs.length) throw new Error("this hour has no segments");
+
+    // clip mode: start at the playhead, default length from the input
+    const isClip = $("#exportRange").value === "clip";
+    let stamp = "";
+    if (isClip) {
+      const lenMin = Math.max(1, Math.min(60, +$("#exportLen").value || 5));
+      const start = Math.max(0, $("#video").currentTime || 0);
+      const end = Math.min(segs[segs.length - 1].start + segs[segs.length - 1].dur,
+                           start + lenMin * 60);
+      // keep from the segment containing the playhead so the clip opens on a
+      // keyframe-aligned chunk (TS segments are independently playable)
+      segs = segs.filter((s) => s.start < end && s.start + s.dur > start);
+      const d = new Date(`${dateStr}T00:00:00`);
+      d.setMinutes(d.getMinutes() + Math.round(start));
+      stamp = `-${pad(d.getHours())}${pad(d.getMinutes())}`;
+    }
+
+    const total = segs.reduce((a, s) => a + s.dur, 0);
+    setExportStatus(`downloading 0/${segs.length} segments…`);
+    const parts = [];
+    let loaded = 0;
+    for (let i = 0; i < segs.length; i++) {
+      const r = await fetch(segs[i].url, { signal: exportAbort.signal });
+      if (!r.ok) throw new Error(`segment ${segs[i].url} failed (HTTP ${r.status})`);
+      parts.push(new Uint8Array(await r.arrayBuffer()));
+      loaded += segs[i].dur;
+      setExportStatus(
+        `downloading ${i + 1}/${segs.length} segments (${Math.round(loaded)}s of ${Math.round(total)}s)…`);
+    }
+    // MPEG-TS concatenation: joining raw .ts chunks yields a valid MPEG-TS file
+    const blob = new Blob(parts, { type: "video/mp2t" });
+    parts.length = 0;
+    const name = `${currentCam.id}_${dateStr}-${pad(hh)}${stamp}.ts`;
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 30_000);
+    setExportStatus(`saved ${name} (${Math.round(total / 60)} min, MPEG‑TS — plays in VLC; remux: ffmpeg -i "${name}" -c copy out.mp4)`);
+  } catch (e) {
+    if (e.name === "AbortError") setExportStatus("export cancelled", true);
+    else setExportStatus(String(e.message || e), true);
+  } finally {
+    exporting = false;
+    exportAbort = null;
+    btn.classList.remove("busy");
+    btn.textContent = "⬇ Export";
+  }
+}
+
+function setExportStatus(msg, isError) {
+  const el = $("#exportStatus");
+  el.textContent = msg;
+  el.classList.toggle("err", !!isError);
+}
+
+function initExport() {
+  $("#exportBtn").onclick = runExport;
+  const syncLen = () => { $("#lenLabel").style.display =
+    $("#exportRange").value === "clip" ? "" : "none"; };
+  $("#exportRange").onchange = syncLen;
+  syncLen();
+}
+
+initExport();
 init();

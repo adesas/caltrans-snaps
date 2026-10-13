@@ -30,6 +30,20 @@
       <button class="btn" id="nowBtn">⏺ Now</button>
       <div id="hourBar"></div>
     </div>
+    <div id="exportBar">
+      <button class="btn" id="exportBtn">⬇ Export</button>
+      <label>Range
+        <select id="exportRange">
+          <option value="clip" selected>Clip from playhead</option>
+          <option value="hour">Whole hour</option>
+        </select>
+      </label>
+      <label id="lenLabel">Length
+        <input type="number" id="exportLen" min="1" max="60" value="5">
+        min
+      </label>
+      <span id="exportStatus"></span>
+    </div>
     <div id="camMeta"></div>
   </section>
 </main>
