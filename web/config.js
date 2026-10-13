@@ -4,5 +4,5 @@ const CFG = {
   MEDIA_BASE: "https://media.sacvalleycams.com",
   // Your GitHub repo, used by the "Request a county" button.
   REPO: "adesas/caltrans-snaps",
-  RETENTION_HOURS: 72,
+  RETENTION_HOURS: 2160,
 };

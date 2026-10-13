@@ -194,7 +194,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--limit", type=int, default=10)
     p.add_argument("--region", default="Oroville / SR-70 Corridor")
     p.add_argument("--storage-root", default="/mnt/8tb/caltrans-snaps")
-    p.add_argument("--retention-hours", type=int, default=72)
+    p.add_argument("--retention-hours", type=int, default=2160)
     p.add_argument("--config-out", default="config/cameras.yaml")
     p.add_argument("--site-out", default="web/cameras.json")
     args = p.parse_args(argv)

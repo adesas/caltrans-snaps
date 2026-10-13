@@ -40,7 +40,7 @@ def main(argv=None) -> int:
     root = Path(cfg["storage_root"])
     rec = cfg.get("recording", {})
     segment_seconds = int(rec.get("segment_seconds", 6))
-    retention_hours = int(rec.get("retention_hours", 72))
+    retention_hours = int(rec.get("retention_hours", 2160))
     root.mkdir(parents=True, exist_ok=True)
 
     stop = threading.Event()

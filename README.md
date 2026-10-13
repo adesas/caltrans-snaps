@@ -1,7 +1,7 @@
 # caltrans-snaps 📷🚗
 
 Continuous local recording of Caltrans traffic cameras into a rolling
-**72-hour HLS archive**, with a GitHub Pages front-end. Starting region:
+**90-day HLS archive**, with a GitHub Pages front-end. Starting region:
 the **SR-70 corridor + SR-99 (Oroville · Yuba City · Marysville)** — an area
 no public traffic-cam archive covers yet.
 
@@ -60,10 +60,10 @@ Saddleback) were 404 at testing time — they self-heal via retries; watch
 
 Measured per-camera: **~300–450 kbps**, 720×480 H.264 → **~4.3 GB/camera/day**.
 
-| Scope | /day | 3 days | fits in 6.8 TB free? |
+| Scope | /day | 90 days | fits in 6.7 TB free? |
 |---|---|---|---|
-| 10 cams (today) | ~43 GB | **~130 GB** | trivially |
-| all 147 cams, 4 counties | ~630 GB | ~1.9 TB | yes (~28% of free) |
+| 10 cams (today) | ~43 GB | **~3.8 TB** | yes (~57% of free) |
+| all 147 cams, 4 counties | ~630 GB | ~56 TB | **no** — needs more disks (or per-scope retention) |
 Disk write load ~5 MB/s, RAM ~80 MB/ffmpeg proc — nothing on this box is a
 constraint (16 cores / 46 GB).
 

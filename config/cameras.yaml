@@ -5,7 +5,7 @@ storage_root: /mnt/8tb/caltrans-snaps
 recording:
   segment_seconds: 6
   session_hours: 1
-  retention_hours: 72
+  retention_hours: 2160  # 90 days — accident-evidence buyers need long archives
   url_refresh_hours: 24
 cameras:
 - id: 70-feather-river-blvd-jso-yub70-nb
