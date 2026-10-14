@@ -349,11 +349,12 @@ let map = null;                       // Leaflet map (built on first open)
 const markersById = new Map();        // cam.id -> L.marker (for selection highlight)
 
 function markerIcon(cam) {
+  // pill labelled with the camera name; colour still encodes the route
   const c = cam.offline ? "#7a8494" : (ROUTE_COLORS[cam.route] || "#e6e9ee");
   return L.divIcon({
     className: "", // replace leaflet's default marker div
-    html: `<i class="mk${cam.offline ? " off" : ""}" style="--c:${c}">${cam.route}</i>`,
-    iconSize: [34, 18], iconAnchor: [17, 9], popupAnchor: [0, -12],
+    html: `<i class="mk${cam.offline ? " off" : ""}" style="--c:${c}" title="${cam.name} — ${cam.route}, ${cam.place || cam.county}">${cam.name}</i>`,
+    iconSize: [1, 1], iconAnchor: [0, 0], popupAnchor: [0, -8],
   });
 }
 
@@ -367,7 +368,7 @@ function buildMap() {
   }).addTo(map);
 
   const cluster = L.markerClusterGroup({
-    maxClusterRadius: 45,
+    maxClusterRadius: 60,   // generous: keeps overlapping name-label pills merged into count bubbles
     showCoverageOnHover: false,
     iconCreateFunction: (c) => L.divIcon({
       className: "", html: `<i class="mkclus">${c.getChildCount()}</i>`,
@@ -388,6 +389,9 @@ function buildMap() {
         const btn = e.popup.getElement().querySelector(".watch");
         if (btn) btn.onclick = () => { closeMap(); selectCam(cam); };
       });
+      // hovered label comes to front so overlapping pills stay clickable
+      m.on("mouseover", () => m.setZIndexOffset(1000));
+      m.on("mouseout", () => m.setZIndexOffset(0));
       cluster.addLayer(m);
       markersById.set(cam.id, m);
       bounds.push([cam.lat, cam.lon]);
@@ -395,6 +399,7 @@ function buildMap() {
   }
   map.addLayer(cluster);
   if (bounds.length) map.fitBounds(bounds, { padding: [24, 24] });
+  window.snapsMap = map;   // debug/test handle
 }
 
 function openMap() {

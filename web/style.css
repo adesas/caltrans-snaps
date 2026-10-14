@@ -50,9 +50,12 @@ footer { padding:.6rem 1.2rem; color:#5c6a80; font-size:.8rem; border-top:1px so
 #map .leaflet-control-attribution a { color:#8fa2bd; }
 #map .leaflet-bar a { background:#1a1f28; color:#e6e9ee; border-color:#39506e; }
 
-/* route-coloured camera pins (divIcon) */
-.mk { display:inline-flex; align-items:center; justify-content:center; width:auto; min-width:2.1rem; height:1.15rem; padding:0 .3rem; font-style:normal; font-size:.62rem; font-weight:700; letter-spacing:.02em; color:#04121f; background:var(--c,#8fa2bd); border-radius:.6rem; border:1px solid rgba(255,255,255,.35); box-shadow:0 1px 4px rgba(0,0,0,.55); cursor:pointer; white-space:nowrap; }
-.mk.off { color:#cfd6df; background:#3a4250; border-style:dashed; border-color:#7a8494; }
+/* camera-name label pills (divIcon child, centred over the marker point);
+   border/underline colour encodes the route */
+.mk { position:absolute; left:0; top:0; transform:translate(-50%,-135%); display:inline-flex; align-items:center; justify-content:center; height:1.25rem; padding:0 .45rem; font-style:normal; font-size:.68rem; font-weight:600; color:#e8edf4; background:#141a23e6; border:1.5px solid var(--c,#8fa2bd); border-radius:.62rem; box-shadow:0 1px 5px rgba(0,0,0,.6); cursor:pointer; white-space:nowrap; }
+.mk::after { content:""; position:absolute; left:50%; bottom:-4px; width:0; height:0; border:4px solid transparent; border-top-color:var(--c,#8fa2bd); transform:translateX(-50%); }
+.mk.off { color:#aab3bf; background:#242b36e6; border-style:dashed; border-color:#7a8494; }
+.mk.off::after { border-top-color:#7a8494; }
 .mk.sel { outline:2px solid var(--acc); outline-offset:1px; transform:scale(1.12); }
 .mk:hover { filter:brightness(1.15); }
 .mkclus { display:flex; align-items:center; justify-content:center; width:2.2rem; height:2.2rem; font-style:normal; font-weight:700; font-size:.8rem; color:#04121f; background:var(--acc); border-radius:50%; border:3px solid rgba(76,194,255,.35); box-shadow:0 0 0 6px rgba(76,194,255,.12); }
