@@ -12,7 +12,11 @@
 <meta property="og:url" content="https://adesas.github.io/caltrans-snaps/">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
 <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 </head>
 <body>
 <header>
@@ -20,10 +24,23 @@
     <h1>📷 Sac Valley Traffic Cam Archive</h1>
     <p class="sub">Free rolling <span id="retentionDays">30</span>-day archive of Caltrans cameras across the Sacramento Valley — SR-70 &amp; SR-99 (Oroville · Yuba City · Marysville), I-5/I-80 metro, US-50 (Rancho Cordova · Folsom) &amp; SR-51. Footage courtesy of <a href="https://cwwp2.dot.ca.gov/vm/streamlist.htm" rel="noreferrer">Caltrans</a>.</p>
   </div>
-  <a id="requestBtn" class="btn" target="_blank" rel="noreferrer"
-     href="https://github.com/adesas/caltrans-snaps/issues/new?labels=coverage-request&title=Add+county:+%3CCounty%3E">
-     ✋ Request a county</a>
+  <div class="hdrBtns">
+    <button id="mapBtn" class="btn">🗺 Camera map</button>
+    <a id="requestBtn" class="btn" target="_blank" rel="noreferrer"
+       href="https://github.com/adesas/caltrans-snaps/issues/new?labels=coverage-request&title=Add+county:+%3CCounty%3E">
+       ✋ Request a county</a>
+  </div>
 </header>
+
+<div id="mapModal" hidden>
+  <div id="mapBox">
+    <div id="mapHead">
+      <span>📷 Pick a camera on the map — coloured by route, grey = offline feed (history still browsable)</span>
+      <button id="mapClose" class="btn">✕ Close</button>
+    </div>
+    <div id="map"></div>
+  </div>
+</div>
 
 <main>
   <aside id="sidebar"></aside>

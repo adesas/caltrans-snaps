@@ -42,6 +42,7 @@ async function init() {
   $("#dayPick").min = fmtDate(min);
   $("#dayPick").onchange = renderHourBar;
   $("#nowBtn").onclick = () => { if (currentCam) selectHour(new Date().getHours()); };
+  if (location.hash === "#map") openMap();   // shareable deep link (catalog is loaded by now)
   const video = $("#video");
   video.addEventListener("timeupdate", tickClock);
   video.addEventListener("loadedmetadata", tickClock);
@@ -90,6 +91,8 @@ function selectCam(cam) {
   currentCam = cam;
   document.querySelectorAll(".cam").forEach((el) =>
     el.classList.toggle("sel", el.dataset.id === cam.id));
+  markersById.forEach((m, id) => m.getElement() &&
+    m.getElement().querySelector(".mk")?.classList.toggle("sel", id === cam.id));
   $("#camMeta").innerHTML =
     `<b>${cam.name}</b> — ${cam.route} at ${cam.place}, ${cam.county} county` +
     ` <a href="https://www.google.com/maps?q=${cam.lat},${cam.lon}" target="_blank" rel="noreferrer">map</a>`;
@@ -336,5 +339,84 @@ function initExport() {
   syncLen();
 }
 
+/* ---------------- interactive camera map (Leaflet + markercluster) ---------------- */
+
+const ROUTE_COLORS = {
+  "I-5": "#4cc2ff", "I-80": "#b07cff", "SR-51": "#ffd166",
+  "SR-70": "#ff9f6e", "SR-99": "#6ee7a0", "US-50": "#41d4c8",
+};
+let map = null;                       // Leaflet map (built on first open)
+const markersById = new Map();        // cam.id -> L.marker (for selection highlight)
+
+function markerIcon(cam) {
+  const c = cam.offline ? "#7a8494" : (ROUTE_COLORS[cam.route] || "#e6e9ee");
+  return L.divIcon({
+    className: "", // replace leaflet's default marker div
+    html: `<i class="mk${cam.offline ? " off" : ""}" style="--c:${c}">${cam.route}</i>`,
+    iconSize: [34, 18], iconAnchor: [17, 9], popupAnchor: [0, -12],
+  });
+}
+
+function buildMap() {
+  map = L.map("map", { zoomControl: true, attributionControl: true });
+  // OSM standard raster tiles (no API key needed; CARTO basemaps now serve
+  // "API KEY REQUIRED" watermarks). Dark theme via CSS filter on .leaflet-layer.
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+
+  const cluster = L.markerClusterGroup({
+    maxClusterRadius: 45,
+    showCoverageOnHover: false,
+    iconCreateFunction: (c) => L.divIcon({
+      className: "", html: `<i class="mkclus">${c.getChildCount()}</i>`,
+      iconSize: [36, 36],
+    }),
+  });
+  const bounds = [];
+  for (const g of catalog.groups) {
+    for (const cam of g.cameras) {
+      if (!Number.isFinite(cam.lat) || !Number.isFinite(cam.lon)) continue;
+      const m = L.marker([cam.lat, cam.lon], { icon: markerIcon(cam), title: cam.name });
+      m.bindPopup(
+        `<div class="mpop"><b>${cam.name}</b><small>${cam.route} · ${cam.place || cam.county}${cam.direction ? " · " + cam.direction : ""}${cam.offline ? " · <em>offline</em>" : ""}</small>` +
+        thumbUrl(cam.id, fmtDate(new Date()), new Date().getHours()) +
+        `<button class="btn watch" data-id="${cam.id}">▶ Watch this camera</button></div>`,
+        { minWidth: 220 });
+      m.on("popupopen", (e) => {
+        const btn = e.popup.getElement().querySelector(".watch");
+        if (btn) btn.onclick = () => { closeMap(); selectCam(cam); };
+      });
+      cluster.addLayer(m);
+      markersById.set(cam.id, m);
+      bounds.push([cam.lat, cam.lon]);
+    }
+  }
+  map.addLayer(cluster);
+  if (bounds.length) map.fitBounds(bounds, { padding: [24, 24] });
+}
+
+function openMap() {
+  $("#mapModal").hidden = false;
+  document.body.style.overflow = "hidden";
+  if (!map) buildMap();
+  else setTimeout(() => map.invalidateSize(), 50);   // re-measure after un-hiding
+}
+function closeMap() {
+  $("#mapModal").hidden = true;
+  document.body.style.overflow = "";
+}
+
+function initMap() {
+  $("#mapBtn").onclick = openMap;
+  $("#mapClose").onclick = closeMap;
+  $("#mapModal").addEventListener("click", (e) => { if (e.target.id === "mapModal") closeMap(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !$("#mapModal").hidden) closeMap();
+  });
+}
+
 initExport();
 init();
+initMap();
