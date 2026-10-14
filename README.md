@@ -1,7 +1,8 @@
 # caltrans-snaps 📷🚗
 
 Continuous local recording of Caltrans traffic cameras into a rolling
-**90-day HLS archive**, with a GitHub Pages front-end. Starting region:
+**30-day rolling HLS archive** (retention is one config line — raise it when
+you add disks), with a GitHub Pages front-end. Starting region:
 the **SR-70 corridor + SR-99 (Oroville · Yuba City · Marysville)** — an area
 no public traffic-cam archive covers yet.
 
@@ -34,12 +35,14 @@ Caltrans HLS feeds ──► src/snaps (1 ffmpeg per camera, copy-mode, no trans
   earlier footage. Gaps in the archive = downtime only.
 - A retention thread deletes hour-directories older than `retention_hours`.
 
-## Current camera set (10 recording · 2 offline)
+## Current camera set (38 recording · 12 offline)
 
 | Route | Cameras |
 |---|---|
 | SR-70 | Ramirez (Yuba) · Cox Ln/wo Oroville (Butte) · ~~Feather River~~ · ~~Saddleback~~ *(offline)* |
-| SR-99 | Riego NB (Sutter) · Hwy 162/Oroville · Neal/Durham · Southgate 1&2 · Skyway 1 · Hwy 32 1&2 (Chico) |
+| SR-99 | Riego NB (Sutter) · Hwy 162/Oroville · Neal/Durham · Southgate 1&2 · Skyway 1 · Hwy 32 1&2 (Chico) · south metro: Twin Cities/Galt · Dillard · Calvine · Florin Rd 1&2 · MLK Jr · Fruitridge · Hwy99↔Hwy5 1&2 · ~~Sheldon~~ *(offline)* |
+| I-5 | Twin Cities · Cosumnes · Laguna NB/SB · Florin · 43rd Ave · Richards · Hwy5↔Hwy80 · Hwy5↔Hwy50 · ~~Elk Grove OC~~ · ~~Airport~~ · ~~Arena Blvd 1&2~~ · ~~P St~~ *(offline)* |
+| I-80 | Bryte Bend · Truxel · Northgate · Norwood · Watt · JCT244 (Causley Br) · 51/80 Split · Antelope · West Capitol · Reed · ~~Chiles~~ · ~~Enterprise~~ · ~~Raley~~ · ~~Greenback~~ *(offline)* |
 
 Marking a camera `offline: true` in the config skips it in the recorder but
 keeps its history browsable on the site (shown greyed with an *offline* tag);
@@ -65,10 +68,12 @@ them — watch `status/*.json`.
 
 Measured per-camera: **~300–450 kbps**, 720×480 H.264 → **~4.3 GB/camera/day**.
 
-| Scope | /day | 90 days | fits in 6.7 TB free? |
+| Scope | /day | 30 days | fits in 6.7 TB free? |
 |---|---|---|---|
-| 10 cams (today) | ~43 GB | **~3.8 TB** | yes (~57% of free) |
-| all 147 cams, 4 counties | ~630 GB | ~56 TB | **no** — needs more disks (or per-scope retention) |
+| 38 cams recording (today, 12 offline) | ~163 GB | **~4.8 TB** | yes (~72% of free) |
+| + the 10 dead Sac feeds recovering | ~206 GB | ~6.1 TB | tight (~91%) — watch `df` |
+| Tier-2 US-50/SR-51 set (~18 cams) on top | ~283 GB | ~8.4 TB | **no** — add one 4 TB drive (~$90) |
+| everything @ 90 days | ~283 GB | ~25 TB | needs a ~26 TB array (or per-camera retention) |
 Disk write load ~5 MB/s, RAM ~80 MB/ffmpeg proc — nothing on this box is a
 constraint (16 cores / 46 GB).
 

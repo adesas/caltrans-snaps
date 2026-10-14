@@ -5,7 +5,7 @@ storage_root: /mnt/8tb/caltrans-snaps
 recording:
   segment_seconds: 6
   session_hours: 1
-  retention_hours: 2160  # 90 days — accident-evidence buyers need long archives
+  retention_hours: 720  # 30 days — fits current disk with Sac metro set; raise to 2160 after adding ~4-8 TB more disks
   url_refresh_hours: 24
 cameras:
 - id: 70-feather-river-blvd-jso-yub70-nb
@@ -130,3 +130,398 @@ cameras:
   lat: 39.715094
   lon: -121.800321
   stream_url: https://wzmedia.dot.ca.gov/D3/99_Skyway_BUT99_NB_1.stream/playlist.m3u8
+
+# --- Sacramento metro expansion (Tier 1) added 2026-10-13 ---
+# SR-99 south metro
+- id: 99-jct5-sac99-sb-1
+  objectid: 376
+  name: Hwy 99 at Hwy 5 1
+  route: SR-99
+  county: Sacramento
+  place: Sacramento
+  direction: null
+  lat: 38.67102178
+  lon: -121.54035608
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_JCT5_SAC99_SB_1.stream/playlist.m3u8
+- id: 99-jct5-sac99-sb-2
+  objectid: 377
+  name: Hwy 99 at Hwy 5 2
+  route: SR-99
+  county: Sacramento
+  place: Sacramento
+  direction: null
+  lat: 38.67102178
+  lon: -121.54035608
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_JCT5_SAC99_SB_2.stream/playlist.m3u8
+- id: 99-fruitridge-rd-jso-sac99-sb
+  objectid: 290
+  name: Hwy 99 at Fruitridge
+  route: SR-99
+  county: Sacramento
+  place: Sacramento
+  direction: "South"
+  lat: 38.523998
+  lon: -121.46752
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_Fruitridge_Rd_JSO_SAC99_SB.stream/playlist.m3u8
+- id: 99-martin-luther-king-sac99-sb
+  objectid: 312
+  name: Hwy 99 at Martin Luther King
+  route: SR-99
+  county: Sacramento
+  place: Sacramento
+  direction: null
+  lat: 38.51943
+  lon: -121.46579
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_Martin_Luther_King_SAC99_SB.stream/playlist.m3u8
+- id: 99-florin-rd-jso-sac99-nb-1
+  objectid: 442
+  name: Hwy 99 at Florin_Rd_JSO_SAC99_NB_1
+  route: SR-99
+  county: Sacramento
+  place: SR99 at Florin Rd
+  direction: "North"
+  lat: 38.495338
+  lon: -121.44462
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_Florin_Rd_JSO_SAC99_NB_1.stream/playlist.m3u8
+- id: 99-florin-rd-jso-sac99-nb-2
+  objectid: 443
+  name: Hwy 99 at Florin_Rd_JSO_SAC99_NB_2
+  route: SR-99
+  county: Sacramento
+  place: SR99 at Florin Rd
+  direction: "North"
+  lat: 38.495338
+  lon: -121.44462
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_Florin_Rd_JSO_SAC99_NB_2.stream/playlist.m3u8
+- id: 99-calvine-rd-jno-sac99-sb
+  objectid: 313
+  name: Hwy 99 at Calvine
+  route: SR-99
+  county: Sacramento
+  place: Elk Grove
+  direction: null
+  lat: 38.45757
+  lon: -121.41135
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_Calvine_Rd_JNO_SAC99_SB.stream/playlist.m3u8
+- id: 99-sheldon-rd-jno-sac99-sb
+  objectid: 267
+  name: Hwy 99 at Sheldon
+  route: SR-99
+  county: Sacramento
+  place: Elk Grove
+  direction: "South"
+  lat: 38.446887
+  lon: -121.406059
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_Sheldon_Rd_JNO_SAC99_SB.stream/playlist.m3u8
+  offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
+- id: 99-dillard-rd-sac99-nb
+  objectid: 436
+  name: Hwy 99 at Dillard
+  route: SR-99
+  county: Sacramento
+  place: Elk Grove
+  direction: "North"
+  lat: 38.34234
+  lon: -121.334628
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_Dillard_Rd_SAC99_NB.stream/playlist.m3u8
+- id: 99-twin-cities-rd-jso-sac99-nb
+  objectid: 264
+  name: Hwy 99 at Twin Cities
+  route: SR-99
+  county: Sacramento
+  place: Galt
+  direction: "North"
+  lat: 38.28277
+  lon: -121.306928
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_Twin_Cities_Rd_JSO_SAC99_NB.stream/playlist.m3u8
+# I-5 corridor
+- id: 5-airport-blvd-oc-sac5-nb
+  objectid: 299
+  name: Hwy 5 at Airport
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: null
+  lat: 38.67148
+  lon: -121.58977
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_Airport_Blvd_OC_SAC5_NB.stream/playlist.m3u8
+  offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
+- id: 5-arena-blvd-sac5-sb-1
+  objectid: 445
+  name: Hwy 5 At Arena Blvd 1
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: null
+  lat: 38.643607
+  lon: -121.526925
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_Arena_Blvd_SAC5_SB_1.stream/playlist.m3u8
+  offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
+- id: 5-arena-blvd-sac5-sb-2
+  objectid: 446
+  name: Hwy 5 At Arena Blvd 2
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: null
+  lat: 38.643607
+  lon: -121.526925
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_Arena_Blvd_SAC5_SB_2.stream/playlist.m3u8
+  offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
+- id: 80-jct5-oc-sac80-md
+  objectid: 214
+  name: Hwy 5 at Hwy 80
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: "Median"
+  lat: 38.624972
+  lon: -121.517136
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_JCT5_OC_SAC80_MD.stream/playlist.m3u8
+- id: 5-richards-blvd-sac5-nb
+  objectid: 213
+  name: Hwy 5 at Richards
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: "North"
+  lat: 38.597687
+  lon: -121.503231
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_Richards_Blvd_SAC5_NB.stream/playlist.m3u8
+- id: 5-p-st-sac5-nb
+  objectid: 212
+  name: Hwy 5 at P St
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: "South"
+  lat: 38.577828
+  lon: -121.507587
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_P_St_SAC5_NB.stream/playlist.m3u8
+  offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
+- id: 5-jct50-sac5-nb
+  objectid: 211
+  name: Hwy 5 at Hwy 50
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: "North"
+  lat: 38.568818
+  lon: -121.509993
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_JCT50_SAC5_NB.stream/playlist.m3u8
+- id: 5-43rd-ave-sac5-nb
+  objectid: 208
+  name: Hwy 5 at 43rd Ave
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: "North"
+  lat: 38.516437
+  lon: -121.52178
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_43rd_Ave_SAC5_NB.stream/playlist.m3u8
+- id: 5-florin-rd-sac5-md
+  objectid: 206
+  name: Hwy 5 at Florin
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: "Median"
+  lat: 38.495353
+  lon: -121.51647
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_Florin_Rd_SAC5_MD.stream/playlist.m3u8
+- id: 5-cosumnes-river-blvd-oc-sac5-nb
+  objectid: 297
+  name: Hwy 5 at Cosumnes
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: null
+  lat: 38.46643
+  lon: -121.49646
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_Cosumnes_River_Blvd_OC_SAC5_NB.stream/playlist.m3u8
+- id: 5-laguna-blvd-jno-sac5-sb
+  objectid: 265
+  name: Hwy 5 at Laguna SB
+  route: I-5
+  county: Sacramento
+  place: Sacramento
+  direction: "South"
+  lat: 38.4386
+  lon: -121.490253
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_Laguna_Blvd_JNO_SAC5_SB.stream/playlist.m3u8
+- id: 5-laguna-blvd-jno-sac5-nb
+  objectid: 266
+  name: Hwy 5 at Laguna NB
+  route: I-5
+  county: Sacramento
+  place: Elk Grove
+  direction: "North"
+  lat: 38.435527
+  lon: -121.489032
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_Laguna_Blvd_JNO_SAC5_NB.stream/playlist.m3u8
+- id: 5-elk-grove-oc-sac5-nb
+  objectid: 298
+  name: Hwy 5 at Elk Grove
+  route: I-5
+  county: Sacramento
+  place: Elk Grove
+  direction: null
+  lat: 38.408888
+  lon: -121.484446
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_Elk_Grove_OC_SAC5_NB.stream/playlist.m3u8
+  offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
+- id: 5-twin-cities-rd-jso-sac5-nb
+  objectid: 289
+  name: Hwy 5 at Twin Cities
+  route: I-5
+  county: Sacramento
+  place: Elk Grove
+  direction: "North"
+  lat: 38.27609
+  lon: -121.45575
+  stream_url: https://wzmedia.dot.ca.gov/D3/5_Twin_Cities_Rd_JSO_SAC5_NB.stream/playlist.m3u8
+# I-80 corridor (incl. Yolo Bypass side)
+- id: 80-antelope-rd-oc-sac80-wb
+  objectid: 242
+  name: Hwy 80 at Antelope
+  route: I-80
+  county: Sacramento
+  place: Citrus Heights
+  direction: "West"
+  lat: 38.707251
+  lon: -121.310319
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Antelope_Rd_OC_SAC80_WB.stream/playlist.m3u8
+- id: 80-greenback-ln-oc-sac80-eb
+  objectid: 241
+  name: Hwy 80 at Greenback
+  route: I-80
+  county: Sacramento
+  place: Sacramento
+  direction: "Median"
+  lat: 38.682718
+  lon: -121.336574
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Greenback_Ln_OC_SAC80_EB.stream/playlist.m3u8
+  offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
+- id: 80-jct51-split-sac80-eb
+  objectid: 240
+  name: Hwy 80 at 51/80 Split
+  route: I-80
+  county: Sacramento
+  place: North Highlands
+  direction: "Median"
+  lat: 38.654136
+  lon: -121.367565
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_JCT51_SPLIT_SAC80_EB.stream/playlist.m3u8
+- id: 80-jct244-sac80-eb
+  objectid: 378
+  name: Hwy 80 at JCT244 EB
+  route: I-80
+  county: Sacramento
+  place: Sacramento
+  direction: "East"
+  lat: 38.64886
+  lon: -121.372681
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_JCT244_SAC80_EB.stream/playlist.m3u8
+- id: 80-watt-ave-oc-sac80-wb
+  objectid: 293
+  name: Hwy 80 at Watt
+  route: I-80
+  county: Sacramento
+  place: North Highlands
+  direction: null
+  lat: 38.64602
+  lon: -121.38327
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Watt_Ave_OC_SAC80_WB.stream/playlist.m3u8
+- id: 80-raley-blvd-oc-sac80-wby
+  objectid: 239
+  name: Hwy 80 at Raley
+  route: I-80
+  county: Sacramento
+  place: Sacramento
+  direction: "West"
+  lat: 38.643198
+  lon: -121.429317
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Raley_Blvd_OC_SAC80_WBy.stream/playlist.m3u8
+  offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
+- id: 80-norwood-ave-oc-sac80-wb
+  objectid: 238
+  name: Hwy 80 at Norwood
+  route: I-80
+  county: Sacramento
+  place: Sacramento
+  direction: "West"
+  lat: 38.641702
+  lon: -121.457075
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Norwood_Ave_OC_SAC80_WB.stream/playlist.m3u8
+- id: 80-northgate-blvd-jwo-sac80-md
+  objectid: 237
+  name: Hwy 80 at Northgate
+  route: I-80
+  county: Sacramento
+  place: Sacramento
+  direction: "Median"
+  lat: 38.640668
+  lon: -121.47791
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Northgate_Blvd_JWO_SAC80_MD.stream/playlist.m3u8
+- id: 80-truxel-rd-oc-sac80-eb
+  objectid: 236
+  name: Hwy 80 at Truxel
+  route: I-80
+  county: Sacramento
+  place: Sacramento
+  direction: "West"
+  lat: 38.634014
+  lon: -121.50092
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Truxel_Rd_OC_SAC80_EB.stream/playlist.m3u8
+- id: 80-bryte-bend-bridge-sac80-eb
+  objectid: 235
+  name: Hwy 80 at Bryte Bend
+  route: I-80
+  county: Sacramento
+  place: Sacramento
+  direction: "Median"
+  lat: 38.602967
+  lon: -121.544722
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Bryte_Bend_Bridge_SAC80_EB.stream/playlist.m3u8
+- id: 80-reed-ave-uc-yol80-eb
+  objectid: 315
+  name: Hwy 80 at Reed
+  route: I-80
+  county: Yolo
+  place: West Sacramento
+  direction: null
+  lat: 38.59053
+  lon: -121.55276
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Reed_Ave_UC_YOL80_EB.stream/playlist.m3u8
+- id: 80-west-capitol-ave-jwo-yol80-wb
+  objectid: 234
+  name: Hwy 80 at West Capitol
+  route: I-80
+  county: Yolo
+  place: West Sacramento
+  direction: "West"
+  lat: 38.573915
+  lon: -121.581819
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_West_Capitol_Ave_JWO_YOL80_WB.stream/playlist.m3u8
+- id: 80-enterprise-blvd-uc-yol80-eb
+  objectid: 314
+  name: Hwy 80 at Enterprise
+  route: I-80
+  county: Yolo
+  place: West Sacramento
+  direction: null
+  lat: 38.57368
+  lon: -121.57876
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Enterprise_Blvd_UC_YOL80_EB.stream/playlist.m3u8
+  offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
+- id: 80-chiles-rd-uc-yol80-wb
+  objectid: 233
+  name: Hwy 80 at Chiles
+  route: I-80
+  county: Yolo
+  place: Davis
+  direction: "West"
+  lat: 38.563581
+  lon: -121.638911
+  stream_url: https://wzmedia.dot.ca.gov/D3/80_Chiles_Rd_UC_YOL80_WB.stream/playlist.m3u8
+  offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
