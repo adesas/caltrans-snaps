@@ -35,7 +35,7 @@ Caltrans HLS feeds ──► src/snaps (1 ffmpeg per camera, copy-mode, no trans
   earlier footage. Gaps in the archive = downtime only.
 - A retention thread deletes hour-directories older than `retention_hours`.
 
-## Current camera set (38 recording · 12 offline)
+## Current camera set (58 recording · 12 offline)
 
 | Route | Cameras |
 |---|---|
@@ -43,6 +43,14 @@ Caltrans HLS feeds ──► src/snaps (1 ffmpeg per camera, copy-mode, no trans
 | SR-99 | Riego NB (Sutter) · Hwy 162/Oroville · Neal/Durham · Southgate 1&2 · Skyway 1 · Hwy 32 1&2 (Chico) · south metro: Twin Cities/Galt · Dillard · Calvine · Florin Rd 1&2 · MLK Jr · Fruitridge · Hwy99↔Hwy5 1&2 · ~~Sheldon~~ *(offline)* |
 | I-5 | Twin Cities · Cosumnes · Laguna NB/SB · Florin · 43rd Ave · Richards · Hwy5↔Hwy80 · Hwy5↔Hwy50 · ~~Elk Grove OC~~ · ~~Airport~~ · ~~Arena Blvd 1&2~~ · ~~P St~~ *(offline)* |
 | I-80 | Bryte Bend · Truxel · Northgate · Norwood · Watt · JCT244 (Causley Br) · 51/80 Split · Antelope · West Capitol · Reed · ~~Chiles~~ · ~~Enterprise~~ · ~~Raley~~ · ~~Greenback~~ *(offline)* |
+| US-50 | Rancho Cordova → Folsom *Point of Concern* sites, **1 cam per site** (they are triple-camera gantries): Manlove · Mayhew · Bradshaw · Routier · Mather Field · White Rock · Zinfandel · Sunrise · Hazel + Folsom end: Folsom Blvd · Prairie City · E Bidwell St |
+| SR-51 | Watt · Arden · El Camino · Exposition · Hwy 160 *(1 of 3)* · T/N/E St ramp cluster |
+
+Tier 2 (added 2026-10-14): the US-50 signalised-intersection POC sites
+(Mather/Mulford/La Gama had high-profile fatal T-bones) record one camera
+each — all three per site would triple bandwidth for near-identical coverage.
+At Mayhew the `Mayhew Rd WO 1` feed was 404 at add time, so the healthy
+`Mayhew Rd 1` sibling is recorded instead.
 
 Marking a camera `offline: true` in the config skips it in the recorder but
 keeps its history browsable on the site (shown greyed with an *offline* tag);
@@ -68,12 +76,11 @@ them — watch `status/*.json`.
 
 Measured per-camera: **~300–450 kbps**, 720×480 H.264 → **~4.3 GB/camera/day**.
 
-| Scope | /day | 30 days | fits in 6.7 TB free? |
+| Scope | /day | 30 days | fits in ~7.2 TB free? |
 |---|---|---|---|
-| 38 cams recording (today, 12 offline) | ~163 GB | **~4.8 TB** | yes (~72% of free) |
-| + the 10 dead Sac feeds recovering | ~206 GB | ~6.1 TB | tight (~91%) — watch `df` |
-| Tier-2 US-50/SR-51 set (~18 cams) on top | ~283 GB | ~8.4 TB | **no** — add one 4 TB drive (~$90) |
-| everything @ 90 days | ~283 GB | ~25 TB | needs a ~26 TB array (or per-camera retention) |
+| 58 cams recording (today, 12 offline) | ~249 GB | **~7.4 TB** | **tight/no** — measured load is running lower (~1.6–2 GB/cam/day vs 4.3 budgeted), but watch `df`; plan one 4 TB drive (~$90) or trim retention to ~27 d |
+| + the 12 dead feeds recovering | ~300 GB | ~9 TB | needs the extra drive |
+| everything @ 90 days | ~300 GB | ~27 TB | needs a ~26 TB array (or per-camera retention) |
 Disk write load ~5 MB/s, RAM ~80 MB/ffmpeg proc — nothing on this box is a
 constraint (16 cores / 46 GB).
 

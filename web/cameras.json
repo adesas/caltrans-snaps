@@ -1,6 +1,6 @@
 {
- "region": "Sacramento Valley \u2014 SR-70 \u00b7 SR-99 \u00b7 I-5 \u00b7 I-80",
- "updated_utc": "2026-10-14T05:02:33Z",
+ "region": "Sacramento Valley \u2014 SR-70 \u00b7 SR-99 \u00b7 I-5 \u00b7 I-80 \u00b7 US-50 \u00b7 SR-51",
+ "updated_utc": "2026-10-14T17:10:27Z",
  "timezone": "America/Los_Angeles",
  "groups": [
   {
@@ -387,6 +387,115 @@
    ]
   },
   {
+   "route": "SR-51",
+   "cameras": [
+    {
+     "id": "51-watt-ave-oc-sac51-nb",
+     "objectid": 231,
+     "name": "Hwy 51 at Watt",
+     "route": "SR-51",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": "Median",
+     "lat": 38.639835,
+     "lon": -121.383156,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/51_Watt_Ave_OC_SAC51_NB.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "51-el-camino-oc-sac51-nb",
+     "objectid": 230,
+     "name": "Hwy 51 at El Camino Ave",
+     "route": "SR-51",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": "North",
+     "lat": 38.611313,
+     "lon": -121.425964,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/51_El_Camino_OC_SAC51_NB.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "51-arden-way-jno-sac51-nb",
+     "objectid": 229,
+     "name": "Hwy 51 at Arden",
+     "route": "SR-51",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": "North",
+     "lat": 38.604544,
+     "lon": -121.433335,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/51_Arden_Way_JNO_SAC51_NB.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "51-jct160-sac51-nb-1",
+     "objectid": 426,
+     "name": "Hwy 51 at Hwy 160 1",
+     "route": "SR-51",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": null,
+     "lat": 38.599961,
+     "lon": -121.43958,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/51_JCT160_SAC51_NB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "51-exposition-blvd-oc-sac51-sb",
+     "objectid": 228,
+     "name": "Hwy 51 at Exposition Blvd",
+     "route": "SR-51",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": "South",
+     "lat": 38.597162,
+     "lon": -121.443897,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/51_Exposition_Blvd_OC_SAC51_SB.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "51-e-st-uc-sac51-nb",
+     "objectid": 226,
+     "name": "Hwy 51 at E St",
+     "route": "SR-51",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": "Median",
+     "lat": 38.578995,
+     "lon": -121.464797,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/51_E_St_UC_SAC51_NB.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "51-n-st-sac51-nb",
+     "objectid": 225,
+     "name": "Hwy 51 at N St",
+     "route": "SR-51",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": "Median",
+     "lat": 38.569359,
+     "lon": -121.468902,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/51_N_St_SAC51_NB.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "51-t-st-sac51-nb",
+     "objectid": 224,
+     "name": "Hwy 51 at T St",
+     "route": "SR-51",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": "North",
+     "lat": 38.560102,
+     "lon": -121.472602,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/51_T_St_SAC51_NB.stream/playlist.m3u8",
+     "image_url": null
+    }
+   ]
+  },
+  {
    "route": "SR-70",
    "cameras": [
     {
@@ -400,7 +509,7 @@
      "lat": 39.37603607,
      "lon": -121.61262643,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/70_Cox_Ln_WO_BUT70_WB.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy70wocoxln/hwy70wocoxln.jpg"
+     "image_url": null
     },
     {
      "id": "70-ramirez-rd-yub70-wb",
@@ -413,13 +522,12 @@
      "lat": 39.264525,
      "lon": -121.597602,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/70_Ramirez_Rd_YUB70_WB.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy70atramirez/hwy70atramirez.jpg"
+     "image_url": null
     },
     {
      "id": "70-saddleback-dr-yub70-nb",
      "objectid": 439,
      "name": "Hwy 70 at Saddleback",
-     "offline": true,
      "route": "SR-70",
      "county": "Yuba",
      "place": "Marysville",
@@ -427,13 +535,13 @@
      "lat": 39.189445,
      "lon": -121.594635,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/70_Saddleback_Dr_YUB70_NB.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy70atsaddleback/hwy70atsaddleback.jpg"
+     "offline": true,
+     "image_url": null
     },
     {
      "id": "70-feather-river-blvd-jso-yub70-nb",
      "objectid": 304,
      "name": "Hwy 70 at Feather River",
-     "offline": true,
      "route": "SR-70",
      "county": "Yuba",
      "place": "Marysville",
@@ -441,7 +549,8 @@
      "lat": 39.12163,
      "lon": -121.57217,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/70_Feather_River_Blvd_JSO_YUB70_NB.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy70atfeatherriver/hwy70atfeatherriver.jpg"
+     "offline": true,
+     "image_url": null
     }
    ]
   },
@@ -459,7 +568,7 @@
      "lat": 39.737174,
      "lon": -121.820189,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_JCT32_UC_BUT99_NB_1.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy99athwy321/hwy99athwy321.jpg"
+     "image_url": null
     },
     {
      "id": "99-jct32-uc-but99-nb-2",
@@ -472,7 +581,7 @@
      "lat": 39.737174,
      "lon": -121.820189,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_JCT32_UC_BUT99_NB_2.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy99athwy322/hwy99athwy322.jpg"
+     "image_url": null
     },
     {
      "id": "99-skyway-but99-nb-1",
@@ -485,7 +594,7 @@
      "lat": 39.715094,
      "lon": -121.800321,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Skyway_BUT99_NB_1.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy99atskyway1/hwy99atskyway1.jpg"
+     "image_url": null
     },
     {
      "id": "99-southgate-ln-but99-nb-1",
@@ -498,7 +607,7 @@
      "lat": 39.701535,
      "lon": -121.785848,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Southgate_Ln_BUT99_NB_1.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy99atsouthgate1/hwy99atsouthgate1.jpg"
+     "image_url": null
     },
     {
      "id": "99-southgate-ln-but99-nb-2",
@@ -511,7 +620,7 @@
      "lat": 39.701535,
      "lon": -121.785848,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Southgate_Ln_BUT99_NB_2.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy99atsouthgate2/hwy99atsouthgate2.jpg"
+     "image_url": null
     },
     {
      "id": "99-neal-rd-jso-but99-sb",
@@ -524,7 +633,7 @@
      "lat": 39.6622,
      "lon": -121.74011,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Neal_Rd_JSO_BUT99_SB.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy99atneal/hwy99atneal.jpg"
+     "image_url": null
     },
     {
      "id": "99-jct162e-but99-nb",
@@ -537,7 +646,7 @@
      "lat": 39.494028,
      "lon": -121.688389,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_JCT162E_BUT99_NB.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy99athwy162/hwy99athwy162.jpg"
+     "image_url": null
     },
     {
      "id": "99-w-riego-rd-oc-sut99-nb",
@@ -550,7 +659,7 @@
      "lat": 38.74828,
      "lon": -121.54006,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_W_Riego_Rd_OC_SUT99_NB.stream/playlist.m3u8",
-     "image_url": "https://cwwp2.dot.ca.gov/data/d3/cctv/image/hwy99atriegonb/hwy99atriegonb.jpg"
+     "image_url": null
     },
     {
      "id": "99-jct5-sac99-sb-1",
@@ -681,6 +790,167 @@
      "lat": 38.28277,
      "lon": -121.306928,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Twin_Cities_Rd_JSO_SAC99_NB.stream/playlist.m3u8",
+     "image_url": null
+    }
+   ]
+  },
+  {
+   "route": "US-50",
+   "cameras": [
+    {
+     "id": "50-e-bidwell-st-sac50-wb-1",
+     "objectid": 364,
+     "name": "Hwy 50 at E_Bidwell_St_SAC50_WB_1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Folsom",
+     "direction": "West",
+     "lat": 38.643686,
+     "lon": -121.1141451,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_E_Bidwell_St_SAC50_WB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-prairie-city-rd-sac50-wb",
+     "objectid": 366,
+     "name": "Hwy 50 at Prairie City",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Folsom",
+     "direction": "West",
+     "lat": 38.642402,
+     "lon": -121.1557241,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_Prairie_City_Rd_SAC50_WB.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-folsom-blvd-sac50-wb-1",
+     "objectid": 367,
+     "name": "Hwy 50 at Folsom_Blvd_SAC50_WB_1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Folsom",
+     "direction": "West",
+     "lat": 38.640212,
+     "lon": -121.196928,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_Folsom_Blvd_SAC50_WB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-hazel-ave-oc-jeo-sac50-wb-1",
+     "objectid": 368,
+     "name": "Hwy 50 at Hazel OC JEO WB 1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Rancho Cordova",
+     "direction": "West",
+     "lat": 38.631541,
+     "lon": -121.216651,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_Hazel_Ave_OC_JEO_SAC50_WB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-sunrise-blvd-oc-jwo-sac50-wb-1",
+     "objectid": 401,
+     "name": "Hwy 50 at Sunrise Blvd OC JWO WB 1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Rancho Cordova",
+     "direction": "West",
+     "lat": 38.609259,
+     "lon": -121.270927,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_Sunrise_Blvd_OC_JWO_SAC50_WB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-zinfandel-dr-sac50-eb-1",
+     "objectid": 395,
+     "name": "Hwy 50 at Zinfandel Dr EB 1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Rancho Cordova",
+     "direction": "East",
+     "lat": 38.590256,
+     "lon": -121.28773,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_Zinfandel_Dr_SAC50_EB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-white-rock-poc-eo-sac50-wb-1",
+     "objectid": 392,
+     "name": "Hwy 50 at White Rock POC EO 1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Rancho Cordova",
+     "direction": "West",
+     "lat": 38.586703,
+     "lon": -121.294982,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_White_Rock_POC_EO_SAC50_WB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-mather-field-sac50-eb-1",
+     "objectid": 389,
+     "name": "Hwy 50 at Mather Field EB 1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": "East",
+     "lat": 38.578006,
+     "lon": -121.308156,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_Mather_Field_SAC50_EB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-routier-rd-oc-jwo-sac50-eb-1",
+     "objectid": 414,
+     "name": "Hwy 50 at Routier Rd JWO 1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": null,
+     "lat": 38.573543,
+     "lon": -121.319468,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_Routier_Rd_OC_JWO_SAC50_EB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-bradshaw-rd-sac50-eb-1",
+     "objectid": 407,
+     "name": "Hwy 50 at Bradshaw Rd 1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": null,
+     "lat": 38.565796,
+     "lon": -121.33639,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_Bradshaw_Rd_SAC50_EB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-mayhew-rd-jeo-sac50-eb-1",
+     "objectid": 403,
+     "name": "Hwy 50 at Mayhew Rd 1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": null,
+     "lat": 38.561966,
+     "lon": -121.34779,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_Mayhew_Rd_JEO_SAC50_EB_1.stream/playlist.m3u8",
+     "image_url": null
+    },
+    {
+     "id": "50-manlove-poc-jeo-sac50-eb-1",
+     "objectid": 384,
+     "name": "Hwy 50 at Manlove POC 1",
+     "route": "US-50",
+     "county": "Sacramento",
+     "place": "Sacramento",
+     "direction": null,
+     "lat": 38.559338,
+     "lon": -121.372667,
+     "stream_url": "https://wzmedia.dot.ca.gov/D3/50_Manlove_POC_JEO_SAC50_EB_1.stream/playlist.m3u8",
      "image_url": null
     }
    ]
