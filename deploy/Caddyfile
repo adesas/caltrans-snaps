@@ -18,9 +18,11 @@
 		format json
 	}
 
-	# apex + www -> GitHub Pages site (traffic arrives via Cloudflare Tunnel)
-	@apex host sacvalleycams.com www.sacvalleycams.com
-	redir @apex https://adesas.github.io/caltrans-snaps/ permanent
+	# Canonical site host: www.sacvalleycams.com (served by GitHub Pages; DNS CNAME
+	# adesas.github.io, grey-cloud so GitHub issues the TLS cert). The apex stays on
+	# the tunnel purely to 301 old sacvalleycams.com/... links over to www.
+	@apex host sacvalleycams.com
+	redir @apex https://www.sacvalleycams.com{uri} permanent
 
 	root * /mnt/8tb/caltrans-snaps
 
