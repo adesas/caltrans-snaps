@@ -11,6 +11,7 @@ cameras:
 - id: 70-feather-river-blvd-jso-yub70-nb
   objectid: 304
   name: Hwy 70 at Feather River
+  offline: true  # Caltrans feed 404s; recorder skips it — remove flag to re-enable
   route: SR-70
   county: Yuba
   place: Marysville
@@ -21,6 +22,7 @@ cameras:
 - id: 70-saddleback-dr-yub70-nb
   objectid: 439
   name: Hwy 70 at Saddleback
+  offline: true  # Caltrans feed 404s; recorder skips it — remove flag to re-enable
   route: SR-70
   county: Yuba
   place: Marysville
@@ -98,6 +100,26 @@ cameras:
   lat: 39.701535
   lon: -121.785848
   stream_url: https://wzmedia.dot.ca.gov/D3/99_Southgate_Ln_BUT99_NB_2.stream/playlist.m3u8
+- id: 99-jct32-uc-but99-nb-1
+  objectid: 339
+  name: Hwy 99 at Hwy 32 1
+  route: SR-99
+  county: Butte
+  place: Chico
+  direction: null
+  lat: 39.737174
+  lon: -121.820189
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_JCT32_UC_BUT99_NB_1.stream/playlist.m3u8
+- id: 99-jct32-uc-but99-nb-2
+  objectid: 340
+  name: Hwy 99 at Hwy 32 2
+  route: SR-99
+  county: Butte
+  place: Chico
+  direction: null
+  lat: 39.737174
+  lon: -121.820189
+  stream_url: https://wzmedia.dot.ca.gov/D3/99_JCT32_UC_BUT99_NB_2.stream/playlist.m3u8
 - id: 99-skyway-but99-nb-1
   objectid: 333
   name: Hwy 99 at Skyway 1

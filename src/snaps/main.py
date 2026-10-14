@@ -53,7 +53,12 @@ def main(argv=None) -> int:
     signal.signal(signal.SIGINT, on_signal)
 
     threads = []
+    active = 0
     for cam in cfg["cameras"]:
+        if cam.get("offline"):
+            log.info("skipping %s (%s): marked offline", cam["id"], cam.get("name"))
+            continue
+        active += 1
         r = CameraRecorder(cam, root, segment_seconds=segment_seconds, stop=stop)
         t = threading.Thread(target=r.run, name=f"rec-{cam['id']}", daemon=True)
         t.start()
@@ -66,7 +71,7 @@ def main(argv=None) -> int:
     )
     tr.start()
 
-    print(f"recording {len(cfg['cameras'])} cameras to {root} "
+    print(f"recording {active} cameras to {root} "
           f"(retention {retention_hours}h); Ctrl-C to stop", flush=True)
     try:
         while not stop.is_set():

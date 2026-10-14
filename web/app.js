@@ -57,10 +57,10 @@ function renderSidebar() {
     side.appendChild(h);
     for (const cam of g.cameras) {
       const card = document.createElement("button");
-      card.className = "cam";
+      card.className = "cam" + (cam.offline ? " off" : "");
       card.dataset.id = cam.id;
       card.innerHTML = `${thumbUrl(cam.id, fmtDate(new Date()), new Date().getHours())}
-        <span>${cam.name}</span><small>${cam.county}${cam.direction ? " · " + cam.direction : ""}</small>`;
+        <span>${cam.name}${cam.offline ? ' <em class="off-tag">offline</em>' : ""}</span><small>${cam.county}${cam.direction ? " · " + cam.direction : ""}</small>`;
       card.onclick = () => selectCam(cam);
       side.appendChild(card);
     }

@@ -34,12 +34,16 @@ Caltrans HLS feeds ──► src/snaps (1 ffmpeg per camera, copy-mode, no trans
   earlier footage. Gaps in the archive = downtime only.
 - A retention thread deletes hour-directories older than `retention_hours`.
 
-## Current camera set (10)
+## Current camera set (10 recording · 2 offline)
 
 | Route | Cameras |
 |---|---|
-| SR-70 | Feather River · Saddleback · Ramirez (Yuba) · Cox Ln/wo Oroville (Butte) |
-| SR-99 | Riego NB (Sutter) · Hwy 162/Oroville · Neal/Durham · Southgate 1&2 · Skyway 1 (Chico) |
+| SR-70 | Ramirez (Yuba) · Cox Ln/wo Oroville (Butte) · ~~Feather River~~ · ~~Saddleback~~ *(offline)* |
+| SR-99 | Riego NB (Sutter) · Hwy 162/Oroville · Neal/Durham · Southgate 1&2 · Skyway 1 · Hwy 32 1&2 (Chico) |
+
+Marking a camera `offline: true` in the config skips it in the recorder but
+keeps its history browsable on the site (shown greyed with an *offline* tag);
+drop the flag to resume recording.
 
 Regenerate/expand anytime (selection = route preference, distance from an
 anchor, demotions, explicit include/exclude):
@@ -52,9 +56,10 @@ PYTHONPATH=src python3 -m snaps.catalog --counties Butte Yuba Sutter Sacramento 
 ```
 
 `hls_url` patterns are stable; a daily catalog refresh is optional
-(`url_refresh_hours`). Stream health: two Yuba feeds (Feather River,
-Saddleback) were 404 at testing time — they self-heal via retries; watch
-`status/*.json`.
+(`url_refresh_hours`). Stream health: the two Yuba feeds (Feather River,
+Saddleback) were 404 at testing time and are now marked `offline: true`
+(recorder skips them); re-enable by removing the flag when Caltrans restores
+them — watch `status/*.json`.
 
 ## Storage / bandwidth budget (measured on this machine)
 
