@@ -35,6 +35,14 @@ async function init() {
   catalog = await (await fetch("cameras.json")).json();
   renderSidebar();
 
+  // deep link from camera landing pages: /?cam=<id>
+  const qcam = new URLSearchParams(location.search).get("cam");
+  if (qcam) {
+    for (const g of catalog.groups)
+      for (const c of g.cameras)
+        if (c.id === qcam) { selectCam(c); c._card = 1; }
+  }
+
   const now = new Date();
   $("#dayPick").value = fmtDate(now);
   $("#dayPick").max = fmtDate(now);
@@ -89,6 +97,12 @@ function renderHourBar() {
 
 function selectCam(cam) {
   currentCam = cam;
+  // shareable/refreshable player URL: ?cam=<id> (camera pages link here)
+  try {
+    const u = new URL(location.href);
+    u.searchParams.set("cam", cam.id);
+    history.replaceState(null, "", u);
+  } catch (_) { /* file:// etc. */ }
   document.querySelectorAll(".cam").forEach((el) =>
     el.classList.toggle("sel", el.dataset.id === cam.id));
   markersById.forEach((m, id) => m.getElement() &&

@@ -3,14 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SR-70 &amp; SR-99 Traffic Camera Recordings — Oroville · Yuba City · Marysville · Chico</title>
-<meta name="description" content="Free 30-day archive of Caltrans traffic cameras on Highway 70, Highway 99, Interstate 5, Interstate 80, Highway 50 and Highway 51 (Oroville, Yuba City, Marysville, Chico, Elk Grove, Sacramento, Rancho Cordova, Folsom, West Sacramento). Watch recorded footage from any hour of the past 30 days, scrub by day and hour, and export clips.">
+<title>Sacramento Traffic Cameras — Live &amp; 30-Day Archive | Sac Valley Cams</title>
+<meta name="description" content="Free 30-day archive of Caltrans traffic cameras across the Sacramento Valley — I-5, I-80, US-50 to Folsom, SR-51, SR-70 &amp; SR-99 to Chico. Watch any hour of the past month and export clips.">
 <link rel="canonical" href="https://www.sacvalleycams.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SR-70 · SR-99 · I-5 · I-80 · US-50 · SR-51 Traffic Camera Recordings — 30-day archive">
-<meta property="og:description" content="Live and recorded Caltrans traffic cam footage along the SR-70 corridor and SR-99 (Oroville · Yuba City · Marysville · Chico). Any hour of the past 30 days, exportable.">
+<meta property="og:description" content="70 Caltrans traffic cameras across I-5 · I-80 · US-50 · SR-51 · SR-70 · SR-99 (Chico to Folsom). Any hour of the past 30 days, exportable — free.">
 <meta property="og:url" content="https://www.sacvalleycams.com/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://www.sacvalleycams.com/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.sacvalleycams.com/img/og-cover.jpg">
+<meta name="theme-color" content="#101318">
+<link rel="preconnect" href="https://media.sacvalleycams.com">
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Sac Valley Cams","url":"https://www.sacvalleycams.com/","description":"Free 30-day archive of Caltrans traffic cameras across the Sacramento Valley: I-5, I-80, US-50, SR-51, SR-70 and SR-99.","publisher":{"@type":"Organization","name":"caltrans-snaps","url":"https://github.com/adesas/caltrans-snaps"}}</script>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
@@ -93,6 +101,12 @@
     <li><b>I-80:</b> Causley Bridge / Yolo Bypass side (West Capitol, Enterprise*, Reed), West Sac–Marysville corridor: Bryte Bend, Truxel, Northgate, Norwood, Watt, Greenback/Antelope *(some feeds pending Caltrans recovery)</li>
     <li><b>US-50:</b> Rancho Cordova → Folsom <i>Point of Concern</i> intersection sites — Manlove, Mayhew, Bradshaw, Routier, Mather Field, White Rock, Zinfandel, Sunrise, Hazel (one camera per site) + the Folsom end: Folsom Blvd, Prairie City Rd, E&nbsp;Bidwell St</li>
     <li><b>SR-51:</b> Watt Ave, Arden Way, El Camino Ave, Exposition Blvd, Hwy-160 ramp junction, T/N/E St ramp cluster (Sacramento)</li>
+  </ul>
+  <h3>Frequently asked</h3>
+  <ul>
+    <li><b>How far back can I watch?</b> Every camera is recorded around the clock; any hour of the past 30 days is playable and exportable.</li>
+    <li><b>Can I download a clip?</b> Yes — pick Clip-from-playhead or Whole-hour in Export; you get an MPEG‑TS file that plays in VLC (remux to MP4 with <code>ffmpeg -i x.ts -c copy out.mp4</code>).</li>
+    <li><b>Is there a camera per site?</b> Each camera has its own page under <a href="/cams/">/cams/</a>, or use the <a href="/#map">🗺 map</a> to click-select a location.</li>
   </ul>
   <p>Counties: Butte · Yuba · Sutter · Sacramento. Don't see your area?
   <a href="https://github.com/adesas/caltrans-snaps/issues/new?labels=coverage-request&amp;title=Add+county:+%3CCounty%3E">Request a county</a>.
