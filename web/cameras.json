@@ -125,7 +125,8 @@
      "lat": 38.495353,
      "lon": -121.51647,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/5_Florin_Rd_SAC5_MD.stream/playlist.m3u8",
-     "image_url": null
+     "image_url": null,
+     "offline": true
     },
     {
      "id": "5-cosumnes-river-blvd-oc-sac5-nb",
@@ -138,7 +139,8 @@
      "lat": 38.46643,
      "lon": -121.49646,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/5_Cosumnes_River_Blvd_OC_SAC5_NB.stream/playlist.m3u8",
-     "image_url": null
+     "image_url": null,
+     "offline": true
     },
     {
      "id": "5-laguna-blvd-jno-sac5-sb",
@@ -151,7 +153,8 @@
      "lat": 38.4386,
      "lon": -121.490253,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/5_Laguna_Blvd_JNO_SAC5_SB.stream/playlist.m3u8",
-     "image_url": null
+     "image_url": null,
+     "offline": true
     },
     {
      "id": "5-laguna-blvd-jno-sac5-nb",
@@ -164,7 +167,8 @@
      "lat": 38.435527,
      "lon": -121.489032,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/5_Laguna_Blvd_JNO_SAC5_NB.stream/playlist.m3u8",
-     "image_url": null
+     "image_url": null,
+     "offline": true
     },
     {
      "id": "5-elk-grove-oc-sac5-nb",
@@ -191,7 +195,8 @@
      "lat": 38.27609,
      "lon": -121.45575,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/5_Twin_Cities_Rd_JSO_SAC5_NB.stream/playlist.m3u8",
-     "image_url": null
+     "image_url": null,
+     "offline": true
     }
    ]
   },
@@ -724,7 +729,8 @@
      "lat": 38.495338,
      "lon": -121.44462,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Florin_Rd_JSO_SAC99_NB_1.stream/playlist.m3u8",
-     "image_url": null
+     "image_url": null,
+     "offline": true
     },
     {
      "id": "99-florin-rd-jso-sac99-nb-2",
@@ -737,7 +743,8 @@
      "lat": 38.495338,
      "lon": -121.44462,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Florin_Rd_JSO_SAC99_NB_2.stream/playlist.m3u8",
-     "image_url": null
+     "image_url": null,
+     "offline": true
     },
     {
      "id": "99-calvine-rd-jno-sac99-sb",
@@ -750,7 +757,8 @@
      "lat": 38.45757,
      "lon": -121.41135,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Calvine_Rd_JNO_SAC99_SB.stream/playlist.m3u8",
-     "image_url": null
+     "image_url": null,
+     "offline": true
     },
     {
      "id": "99-sheldon-rd-jno-sac99-sb",
@@ -777,7 +785,8 @@
      "lat": 38.34234,
      "lon": -121.334628,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Dillard_Rd_SAC99_NB.stream/playlist.m3u8",
-     "image_url": null
+     "image_url": null,
+     "offline": true
     },
     {
      "id": "99-twin-cities-rd-jso-sac99-nb",
@@ -790,7 +799,8 @@
      "lat": 38.28277,
      "lon": -121.306928,
      "stream_url": "https://wzmedia.dot.ca.gov/D3/99_Twin_Cities_Rd_JSO_SAC99_NB.stream/playlist.m3u8",
-     "image_url": null
+     "image_url": null,
+     "offline": true
     }
    ]
   },

@@ -174,6 +174,7 @@ cameras:
   lon: -121.46579
   stream_url: https://wzmedia.dot.ca.gov/D3/99_Martin_Luther_King_SAC99_SB.stream/playlist.m3u8
 - id: 99-florin-rd-jso-sac99-nb-1
+  offline: true  # Caltrans rate-limit shedding 2026-10-14 (southernmost); remove to re-enable
   objectid: 442
   name: Hwy 99 at Florin_Rd_JSO_SAC99_NB_1
   route: SR-99
@@ -184,6 +185,7 @@ cameras:
   lon: -121.44462
   stream_url: https://wzmedia.dot.ca.gov/D3/99_Florin_Rd_JSO_SAC99_NB_1.stream/playlist.m3u8
 - id: 99-florin-rd-jso-sac99-nb-2
+  offline: true  # Caltrans rate-limit shedding 2026-10-14 (southernmost); remove to re-enable
   objectid: 443
   name: Hwy 99 at Florin_Rd_JSO_SAC99_NB_2
   route: SR-99
@@ -194,6 +196,7 @@ cameras:
   lon: -121.44462
   stream_url: https://wzmedia.dot.ca.gov/D3/99_Florin_Rd_JSO_SAC99_NB_2.stream/playlist.m3u8
 - id: 99-calvine-rd-jno-sac99-sb
+  offline: true  # Caltrans rate-limit shedding 2026-10-14 (southernmost); remove to re-enable
   objectid: 313
   name: Hwy 99 at Calvine
   route: SR-99
@@ -215,6 +218,7 @@ cameras:
   stream_url: https://wzmedia.dot.ca.gov/D3/99_Sheldon_Rd_JNO_SAC99_SB.stream/playlist.m3u8
   offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
 - id: 99-dillard-rd-sac99-nb
+  offline: true  # Caltrans rate-limit shedding 2026-10-14 (southernmost); remove to re-enable
   objectid: 436
   name: Hwy 99 at Dillard
   route: SR-99
@@ -225,6 +229,7 @@ cameras:
   lon: -121.334628
   stream_url: https://wzmedia.dot.ca.gov/D3/99_Dillard_Rd_SAC99_NB.stream/playlist.m3u8
 - id: 99-twin-cities-rd-jso-sac99-nb
+  offline: true  # Caltrans rate-limit shedding 2026-10-14 (southernmost); remove to re-enable
   objectid: 264
   name: Hwy 99 at Twin Cities
   route: SR-99
@@ -320,6 +325,7 @@ cameras:
   lon: -121.52178
   stream_url: https://wzmedia.dot.ca.gov/D3/5_43rd_Ave_SAC5_NB.stream/playlist.m3u8
 - id: 5-florin-rd-sac5-md
+  offline: true  # Caltrans rate-limit shedding 2026-10-14 (southernmost); remove to re-enable
   objectid: 206
   name: Hwy 5 at Florin
   route: I-5
@@ -330,6 +336,7 @@ cameras:
   lon: -121.51647
   stream_url: https://wzmedia.dot.ca.gov/D3/5_Florin_Rd_SAC5_MD.stream/playlist.m3u8
 - id: 5-cosumnes-river-blvd-oc-sac5-nb
+  offline: true  # Caltrans rate-limit shedding 2026-10-14 (southernmost); remove to re-enable
   objectid: 297
   name: Hwy 5 at Cosumnes
   route: I-5
@@ -340,6 +347,7 @@ cameras:
   lon: -121.49646
   stream_url: https://wzmedia.dot.ca.gov/D3/5_Cosumnes_River_Blvd_OC_SAC5_NB.stream/playlist.m3u8
 - id: 5-laguna-blvd-jno-sac5-sb
+  offline: true  # Caltrans rate-limit shedding 2026-10-14 (southernmost); remove to re-enable
   objectid: 265
   name: Hwy 5 at Laguna SB
   route: I-5
@@ -350,6 +358,7 @@ cameras:
   lon: -121.490253
   stream_url: https://wzmedia.dot.ca.gov/D3/5_Laguna_Blvd_JNO_SAC5_SB.stream/playlist.m3u8
 - id: 5-laguna-blvd-jno-sac5-nb
+  offline: true  # Caltrans rate-limit shedding 2026-10-14 (southernmost); remove to re-enable
   objectid: 266
   name: Hwy 5 at Laguna NB
   route: I-5
@@ -371,6 +380,7 @@ cameras:
   stream_url: https://wzmedia.dot.ca.gov/D3/5_Elk_Grove_OC_SAC5_NB.stream/playlist.m3u8
   offline: true  # stream 404 at add time (2026-10-13); remove flag when Caltrans feed recovers
 - id: 5-twin-cities-rd-jso-sac5-nb
+  offline: true  # Caltrans rate-limit shedding 2026-10-14 (southernmost); remove to re-enable
   objectid: 289
   name: Hwy 5 at Twin Cities
   route: I-5

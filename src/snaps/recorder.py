@@ -9,8 +9,13 @@ this deployment is America/Los_Angeles):
     {storage_root}/status/{camera_id}.json                        (heartbeat)
 
 Caltrans HLS feeds 404 periodically (~every 20-30 min, normal); sessions
-that die early are restarted immediately with capped backoff. No transcoding:
-CPU per camera is ~1-2%, disk write ~50 KB/s per camera.
+that die early are restarted with exponential backoff + jitter (NOT a fixed
+cap: wzmedia rate-limits per IP and a synchronized restart storm across all
+camers gets our IP penalty-boxed — see 2026-10-14 incident where all new TCP
+connects to wzmedia were SYN-dropped after hours of ~30 s retry hammering).
+A stalled session (no new segments for STALL_SECONDS even though ffmpeg is
+"alive") is killed and restarted like a dead one.
+No transcoding: CPU per camera is ~1-2%, disk write ~50 KB/s per camera.
 """
 
 from __future__ import annotations
@@ -18,16 +23,21 @@ from __future__ import annotations
 import json
 import logging
 import os
+import random
 import re
 import signal
 import subprocess
 import threading
 import time
+import zlib
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, Optional
 
 log = logging.getLogger(__name__)
+
+# kill a session if no new .ts segment appears for this long
+STALL_SECONDS = 90
 
 
 def hour_dir(root: Path, cam_id: str, when: datetime) -> Path:
@@ -49,6 +59,10 @@ class CameraRecorder:
         self.attempt = 0  # restarts within one hour dir; each gets its own segment prefix
         self.consecutive_failures = 0
         self.last_heartbeat = 0.0
+        self.session_started_ts = 0.0
+        # Stable per-camera offset (0-45 s) applied before starting a session:
+        # keeps 50+ cameras from reconnecting in lockstep on the clock hour.
+        self.phase = zlib.crc32(self.cam_id.encode()) % 46
 
     # ------------------------------------------------------------------ ffmpeg
 
@@ -73,6 +87,28 @@ class CameraRecorder:
             str(out_dir / "index.m3u8"),
         ]
 
+    def _stalled(self, out_dir: Path) -> bool:
+        """True if the running session has produced no new segment recently."""
+        newest = self.session_started_ts
+        for f in out_dir.glob("a*_*.ts"):
+            m = f.stat().st_mtime
+            if m > newest:
+                newest = m
+        return time.time() - newest > STALL_SECONDS
+
+    def _backoff_wait(self) -> None:
+        """Exponential backoff with jitter between restarts (interruptible).
+
+        wzmedia rate-limits per IP; after N consecutive failures we must get
+        progressively more polite instead of retrying on a short fixed cycle.
+        Sequence ~5,10,20,40,80,160,300,300...s (±25% jitter).
+        """
+        n = max(self.consecutive_failures, 1)
+        base = min(300.0, 5.0 * (2 ** (n - 1)))
+        delay = base * (0.75 + random.random() * 0.5)
+        log.info("[%s] backing off %.0f s (failure #%d)", self.cam_id, delay, n)
+        self.stop.wait(timeout=delay)
+
     def _start_session(self, hour_start: datetime) -> None:
         out_dir = hour_dir(self.root, self.cam_id, hour_start)
         out_dir.mkdir(parents=True, exist_ok=True)
@@ -89,6 +125,7 @@ class CameraRecorder:
             start_new_session=True,
         )
         self.session_hour_start = hour_start
+        self.session_started_ts = time.time()
 
     def _kill_session(self) -> None:
         if self.proc and self.proc.poll() is None:
@@ -144,6 +181,13 @@ class CameraRecorder:
 
             if self.proc is not None:
                 alive = self.proc.poll() is None
+                # watchdog: an ffmpeg stuck on a black-holed TCP connect looks
+                # "alive" forever but writes nothing — kill and treat as dead.
+                if alive and self._stalled(hour_dir(self.root, self.cam_id, self.session_hour_start)):
+                    log.warning("[%s] session stalled (no segments for %ss), killing",
+                                self.cam_id, STALL_SECONDS)
+                    self._kill_session()
+                    alive = False
                 if alive and hour_start == self.session_hour_start:
                     if time.time() - self.last_heartbeat > 60:
                         self._heartbeat(hour_start, ok=True)
@@ -159,10 +203,18 @@ class CameraRecorder:
                     # mid-hour stream drop: back off; _start_session picks the
                     # next free segment prefix from what is on disk
                     self.consecutive_failures += 1
-                    time.sleep(min(2 ** min(self.attempt + 1, 5), 30))
+                    self._backoff_wait()
             if self.stop.is_set():
                 break
             if self.proc is None:
+                # per-camera phase: don't start in lockstep with every other
+                # camera on the clock hour (reconnect storm invites rate limits)
+                due = hour_start + timedelta(seconds=self.phase)
+                wait = (due - datetime.now()).total_seconds()
+                if 0 < wait:
+                    self.stop.wait(timeout=wait)
+                if self.stop.is_set():
+                    break
                 self._start_session(hour_start)
         # shutdown: close out the partial hour so its playlist/thumbnail/status survive
         self._kill_session()

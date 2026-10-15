@@ -7,6 +7,7 @@ import logging
 import signal
 import sys
 import threading
+import time
 from pathlib import Path
 
 import yaml
@@ -63,6 +64,7 @@ def main(argv=None) -> int:
         t = threading.Thread(target=r.run, name=f"rec-{cam['id']}", daemon=True)
         t.start()
         threads.append(t)
+        time.sleep(0.75)  # stagger startup: never open N streams in one burst
         log.info("started recorder for %s (%s)", cam["id"], cam.get("name"))
 
     tr = threading.Thread(
