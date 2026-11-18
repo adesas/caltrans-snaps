@@ -737,3 +737,16 @@ cameras:
   lat: 38.599961
   lon: -121.43958
   stream_url: "https://wzmedia.dot.ca.gov/D3/51_JCT160_SAC51_NB_1.stream/playlist.m3u8"
+
+# --- manually added camera (GitHub issue #1, 2026-11-06, by 404James) ---
+# not present in the ArcGIS CCTV dataset — kept here deliberately
+- id: 50-15th-st-wo-sac50-wb
+  objectid: null
+  name: US-50 at 15th St
+  route: US-50
+  county: Sacramento
+  place: Sacramento
+  direction: WB
+  lat: 38.56444635225124
+  lon: -121.49462255995195
+  stream_url: https://wzmedia.dot.ca.gov/D3/50_15th_St_WO_SAC50_WB.stream/playlist.m3u8
