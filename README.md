@@ -39,7 +39,7 @@ Caltrans HLS feeds ──► src/snaps (1 ffmpeg per camera, copy-mode, no trans
   earlier footage. Gaps in the archive = downtime only.
 - A retention thread deletes hour-directories older than `retention_hours`.
 
-## Current camera set (58 recording · 12 offline)
+## Current camera set (59 recording · 12 offline)
 
 | Route | Cameras |
 |---|---|
@@ -47,7 +47,7 @@ Caltrans HLS feeds ──► src/snaps (1 ffmpeg per camera, copy-mode, no trans
 | SR-99 | Riego NB (Sutter) · Hwy 162/Oroville · Neal/Durham · Southgate 1&2 · Skyway 1 · Hwy 32 1&2 (Chico) · south metro: Twin Cities/Galt · Dillard · Calvine · Florin Rd 1&2 · MLK Jr · Fruitridge · Hwy99↔Hwy5 1&2 · ~~Sheldon~~ *(offline)* |
 | I-5 | Twin Cities · Cosumnes · Laguna NB/SB · Florin · 43rd Ave · Richards · Hwy5↔Hwy80 · Hwy5↔Hwy50 · ~~Elk Grove OC~~ · ~~Airport~~ · ~~Arena Blvd 1&2~~ · ~~P St~~ *(offline)* |
 | I-80 | Bryte Bend · Truxel · Northgate · Norwood · Watt · JCT244 (Causley Br) · 51/80 Split · Antelope · West Capitol · Reed · ~~Chiles~~ · ~~Enterprise~~ · ~~Raley~~ · ~~Greenback~~ *(offline)* |
-| US-50 | Rancho Cordova → Folsom *Point of Concern* sites, **1 cam per site** (they are triple-camera gantries): Manlove · Mayhew · Bradshaw · Routier · Mather Field · White Rock · Zinfandel · Sunrise · Hazel + Folsom end: Folsom Blvd · Prairie City · E Bidwell St |
+| US-50 | Rancho Cordova → Folsom *Point of Concern* sites, **1 cam per site** (they are triple-camera gantries): Manlove · Mayhew · Bradshaw · Routier · Mather Field · White Rock · Zinfandel · Sunrise · Hazel + Folsom end: Folsom Blvd · Prairie City · E Bidwell St + Sacramento city: **15th St (WB)** *(added 2026-11-18 via [issue #1](https://github.com/adesas/caltrans-snaps/issues/1) — thanks @404James; not in the ArcGIS dataset, kept as a manual config entry; 640×480 @ 2.1 Mbps, the highest-quality feed in the set)* |
 | SR-51 | Watt · Arden · El Camino · Exposition · Hwy 160 *(1 of 3)* · T/N/E St ramp cluster |
 
 Tier 2 (added 2026-10-14): the US-50 signalised-intersection POC sites
