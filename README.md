@@ -39,7 +39,7 @@ Caltrans HLS feeds ──► src/snaps (1 ffmpeg per camera, copy-mode, no trans
   earlier footage. Gaps in the archive = downtime only.
 - A retention thread deletes hour-directories older than `retention_hours`.
 
-## Current camera set (59 recording · 12 offline)
+## Current camera set (49 recording · 22 offline)
 
 | Route | Cameras |
 |---|---|
