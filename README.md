@@ -1,5 +1,7 @@
 # caltrans-snaps 📷🚗
 
+<p align="center"><img src="web/logo.png" width="110" alt="Sac Valley Cams — lens looking down a valley road"></p>
+
 Continuous local recording of Caltrans traffic cameras into a rolling
 **30-day rolling HLS archive** (retention is one config line — raise it when
 you add disks), with a GitHub Pages front-end. Starting region:

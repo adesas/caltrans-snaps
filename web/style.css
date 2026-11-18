@@ -2,7 +2,8 @@
 * { box-sizing: border-box; }
 body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--txt); display:flex; flex-direction:column; min-height:100vh; }
 header { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.9rem 1.2rem; border-bottom:1px solid #2a3140; }
-h1 { margin:0; font-size:1.25rem; } .sub { margin:.25rem 0 0; color:#9aa5b5; font-size:.85rem; }
+h1 { margin:0; font-size:1.25rem; display:flex; align-items:center; gap:.6rem; }
+h1 .mark { border-radius:11px; flex:none; } .sub { margin:.25rem 0 0; color:#9aa5b5; font-size:.85rem; }
 a { color:var(--acc); }
 .btn { background:#243247; color:var(--txt); border:1px solid #39506e; border-radius:8px; padding:.45rem .8rem; cursor:pointer; text-decoration:none; font:inherit; }
 .btn:hover { background:#2d405c; }
