@@ -6,6 +6,8 @@ recording:
   segment_seconds: 6
   session_hours: 1
   retention_hours: 720  # 30 days — fits current disk with Sac metro set; raise to 2160 after adding ~4-8 TB more disks
+  startup_stagger_seconds: 2.0   # service-start ramp: camera N joins at N×2 s (re-block protection after an IP block)
+  hour_phase_spread_seconds: 60  # per-camera hourly-rollover jitter window
   url_refresh_hours: 24
 cameras:
 - id: 70-feather-river-blvd-jso-yub70-nb

@@ -42,6 +42,10 @@ def main(argv=None) -> int:
     rec = cfg.get("recording", {})
     segment_seconds = int(rec.get("segment_seconds", 6))
     retention_hours = int(rec.get("retention_hours", 2160))
+    # Recovery ramp: after an IP-level block clears, a simultaneous startup of
+    # every camera is the fastest way to get re-blocked. Walk cameras in 1-by-1.
+    startup_stagger = float(rec.get("startup_stagger_seconds", 2.0))
+    hour_phase_spread = int(rec.get("hour_phase_spread_seconds", 60))
     root.mkdir(parents=True, exist_ok=True)
 
     stop = threading.Event()
@@ -60,11 +64,12 @@ def main(argv=None) -> int:
             log.info("skipping %s (%s): marked offline", cam["id"], cam.get("name"))
             continue
         active += 1
-        r = CameraRecorder(cam, root, segment_seconds=segment_seconds, stop=stop)
+        r = CameraRecorder(cam, root, segment_seconds=segment_seconds,
+                           hour_phase_spread=hour_phase_spread, stop=stop)
         t = threading.Thread(target=r.run, name=f"rec-{cam['id']}", daemon=True)
         t.start()
         threads.append(t)
-        time.sleep(0.75)  # stagger startup: never open N streams in one burst
+        time.sleep(startup_stagger)  # stagger startup: never open N streams in one burst
         log.info("started recorder for %s (%s)", cam["id"], cam.get("name"))
 
     tr = threading.Thread(

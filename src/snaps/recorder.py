@@ -48,6 +48,7 @@ class CameraRecorder:
     """Records one camera forever (until stop() is set). Runs in its own thread."""
 
     def __init__(self, camera: Dict, storage_root: Path, segment_seconds: int = 6,
+                 hour_phase_spread: int = 60,
                  stop: Optional[threading.Event] = None):
         self.cam = camera
         self.cam_id = camera["id"]
@@ -60,9 +61,10 @@ class CameraRecorder:
         self.consecutive_failures = 0
         self.last_heartbeat = 0.0
         self.session_started_ts = 0.0
-        # Stable per-camera offset (0-45 s) applied before starting a session:
-        # keeps 50+ cameras from reconnecting in lockstep on the clock hour.
-        self.phase = zlib.crc32(self.cam_id.encode()) % 46
+        # Stable per-camera offset (0..hour_phase_spread s) applied before
+        # starting a session: keeps 50+ cameras from reconnecting in lockstep
+        # on the clock hour.
+        self.phase = zlib.crc32(self.cam_id.encode()) % (hour_phase_spread + 1)
 
     # ------------------------------------------------------------------ ffmpeg
 
